@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600&display=swap');
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 200;
+}
+:root{
+    --kuning: #ffaf10;
+    --hitam: rgb(73, 73, 73);
+    --border: rgb(197,197,197);
+}
+html{
+    scroll-behavior: smooth;
+    font-size: 20px;
+}
+
+.container{
+    display: flex;
+    flex: 1 1 800px;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.leftSide{
+    width: 900px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    margin-top: 100px;
+}
+.leftSide>h1{
+    color: var(--kuning);
+    font-weight: 600;
+    font-size: 2.5rem;
+    padding: 15px 30px 10px 30px;
+    border-bottom: 8px solid var(--hitam);
+}
+.leftSide>img{
+    width: 200px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+.leftSide>figure{
+    width: 100%;
+    margin: 0 auto;
+}
+.leftSide>figure>img{
+    width: 80%;
+    margin-left: 10%;
+}
+.rightSide{
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgb(241, 241, 241);
+}
+.loginForm{
+    /* border: 1px solid var(--border); */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0 rgb(167, 167, 167);
+}
+.loginForm>form>h3{
+    background: var(--hitam);
+    color: var(--kuning);
+    padding: 15px 0;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 400;
+}
+.wrapper{
+    padding: 30px 40px;
+    display: flex;
+    flex-direction:column;
+    gap: 20px;
+}
+.inputBox{
+    display: flex;
+    flex-direction: column;
+}
+.inputBox>label{
+    margin: 20px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.inputBox>label:first-child{
+    margin-top: 0;
+}
+.inputBox>input{
+    border: 2px solid var(--border);
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+.inputBox>input:focus{
+    outline: none;
+    box-shadow: 0 0 7px 0 rgba(92, 143, 190, 0.781);
+}
+.wrapper>button{
+    padding: 10px 20px;
+    background: var(--hitam);
+    color: var(--kuning);
+    width: 100%;
+    font-size: 1rem;
+    border: 1px solid var(--hitam);
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.wrapper>button:hover, button:focus{
+    outline: none;
+    box-shadow: 0 0 10px 0 rgb(61, 61, 61);
+}
+.wrapper>p{
+    text-align: center;
+}
+footer{
+    background: var(--hitam);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+}
+.info{
+    font-size: 0.8rem;
+    border: 1px solid grey;
+    padding: 13px 25px;
+    line-height: 1.1rem;
+}
+.salah{
+    background: rgba(255, 0, 0, 0.050);
+    border: 1px solid red;
+    color: red;
+    display: none;
+}
+.created{
+    background: rgba(0, 255, 42, 0.05);
+    border: 1px solid rgb(1, 192, 42);
+    color: rgb(1,192,42);
+    display: none;
+}
+.outerContainer{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background:rgba(61, 61, 61, 0.534);
+    z-index: 10;
+    transition: transform 0.5s ease;
+    transform: translateY(-5000px);
+}
+.addForm{
+    width: 50%;
+    margin: 5% 0 0 25%;
+    background: white;
+    border-radius: 12px;
+    padding: 10px 0;
+    box-shadow: 0 0 10px 0 rgb(230, 229, 229);
+}
+.addForm>form{
+    margin-bottom: 30px;
+}
+.formtitle{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 6px solid var(--kuning);
+    align-items: center;
+}
+.formtitle>a{
+    text-decoration: none;
+    margin-right: 30px;
+}
+.formtitle>h3{
+    width: 500px;
+    padding: 15px 0 15px 30px;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
