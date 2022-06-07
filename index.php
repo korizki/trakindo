@@ -19,7 +19,7 @@
         </div>
         <div class="rightSide">
             <div class="loginForm">
-                <form action="./controller/validateLogin.php autocomplete="off" method="post">
+                <form action="./controller/validateLogin.php" autocomplete="off" method="post">
                     <h3>Form Login</h3>
                     <div class="wrapper">
                         <div class="inputBox">
@@ -30,7 +30,7 @@
                             <label for="password">Masukkan password <i onclick="showPassword('password')" title="Klik untuk melihat password" class="fi fi-rs-eye adjust eye" style="transform: translate(5px, 3px)"></i></label>
                             <input type="password" id="password" name="password" spellcheck="false"  required >
                         </div>
-                        <button type="submit" class="loginBtn"><i class="fi fi-rs-sign-in-alt adjust"></i> Log In</button>
+                        <button type="submit" class="loginBtn" name="loginBtn"><i class="fi fi-rs-sign-in-alt adjust"></i> Log In</button>
                         <p>Belum memiliki akun? Silahkan mendaftar <a href="#" onClick="hideFormCreateUser('show')">disini</a>. </p>
                         <!-- hasil validasi informasi login ataupun tambah data -->
                         <?php 
