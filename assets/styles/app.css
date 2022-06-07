@@ -17,7 +17,6 @@ html{
     scroll-behavior: smooth;
     font-size: 20px;
 }
-
 .container{
     display: flex;
     flex: 1 1 800px;
@@ -69,6 +68,7 @@ html{
     background: white;
     border-radius: 8px;
     box-shadow: 0 0 10px 0 rgb(167, 167, 167);
+    padding-bottom: 30px;
 }
 .loginForm>form>h3{
     background: var(--hitam);
@@ -92,7 +92,7 @@ html{
 .inputBox>label{
     margin: 20px 0 10px 0;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 200;
 }
 .inputBox>label:first-child{
     margin-top: 0;
@@ -107,8 +107,16 @@ html{
     outline: none;
     box-shadow: 0 0 7px 0 rgba(92, 143, 190, 0.781);
 }
+.adjust{
+    display: inline-block;
+    transform: translate(-7px, 3px);
+}
+.adjusts{
+    display: inline-block;
+    transform: translate(-7px, 2px);
+}
 .wrapper>button{
-    padding: 10px 20px;
+    padding: 15px 20px;
     background: var(--hitam);
     color: var(--kuning);
     width: 100%;
@@ -139,18 +147,17 @@ footer{
     border: 1px solid grey;
     padding: 13px 25px;
     line-height: 1.1rem;
+    border-radius: 5px;
 }
 .salah{
     background: rgba(255, 0, 0, 0.050);
     border: 1px solid red;
     color: red;
-    display: none;
 }
 .created{
     background: rgba(0, 255, 42, 0.05);
     border: 1px solid rgb(1, 192, 42);
     color: rgb(1,192,42);
-    display: none;
 }
 .outerContainer{
     position: fixed;
@@ -161,6 +168,9 @@ footer{
     z-index: 10;
     transition: transform 0.5s ease;
     transform: translateY(-5000px);
+}
+.eye{
+    cursor: pointer;
 }
 .addForm{
     width: 50%;
