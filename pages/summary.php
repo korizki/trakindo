@@ -7,7 +7,6 @@
     <title>Summary Page - Trakindo MTS</title>
     <link rel="icon" href="../assets/icons/laptop.png" />
     <link rel="stylesheet" href="../assets/styles/app.css" />
-
 </head>
 <body>
     <!-- validasi session -->
@@ -37,7 +36,7 @@
                 <h4>Berikut adalah rangkuman ticket request atas perusahaan</h4>
                 <h3><?php  echo $company ?></h3>
                 <p>Anda bisa membuat tiket baru ataupun mendapatkan informasi terkait status atau proses dari ticket request sebelumnya.</p>
-                <button><i class="fi fi-rs-envelope-plus adjusts" ></i> Buat Ticket/Request</button>
+                <a href="#createticket" onClick="showFormCreate('open')"><i class="fi fi-rs-envelope-plus adjusts" ></i> Buat Ticket/Request</a>
             </div>
             <div class="content">
                 <div class="sumTicket" id="ticket1">
@@ -57,6 +56,41 @@
                 </div>
             </div>
         </div>
+        <div  id="createticket">
+            <div class="addTicketBox">
+                <h1><i class="fi fi-rs-document adjust"></i> Tambah Ticket Baru</h1>
+                <form action="../controller/submitTicket.php" method="post" autocomplete="off">
+                    <div class="inputBox">
+                        <label for="sn">Serial Number Unit</label>
+                        <input type="text" id="sn" name="sn">
+                    </div>
+                    <div class="inputBox">
+                        <label for="company">Nama Perusahaan</label>
+                        <input type="text" id="company" name="company" value="<?php echo $_SESSION['logged_user_comp'] ?>" disabled>
+                    </div>
+                    <div class="inputBox">
+                        <label for="job">Jenis Pekerjaan</label>
+                        <input type="text" id="job" name="job">
+                    </div>
+                    <div class="inputBox">
+                        <label for="date">Tanggal Permintaan</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                    <div class="joinEmail">
+                        <div class="inputBox">
+                            <label for="email">Contact Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="inputBox">
+                            <label for="phone">Contact Mobile Phone</label>
+                            <input type="phone" id="phone" name="phone">
+                        </div>
+                    </div>
+                    <button type="submit" class="sendTicket">Submit Ticket</button>
+                    <a href="#" onClick="showFormCreate('close')">Batal</a>
+                </form>
+            </div>
+        </div>
         <div class="container-down">
             <h1>Monitoring Ticket</h1>
             <div class="secondBox">
@@ -73,7 +107,7 @@
                     <div>
                         <h2>Daftar Semua Ticket</h2>
                         <p>Lihat daftar atas semua ticket yang pernah anda buat sebelumnya.</p>
-                        <a href="#"><i class="fi fi-rs-search adjust"></i>Cek Ticket</a>
+                        <a href="#"><i class="fi fi-rs-search adjust"></i>Cek Semua Ticket</a>
                     </div>
                 </div>
             </div>
@@ -83,5 +117,15 @@
     <footer>
         Maintenance Ticketing System - Trakindo Utama &copy; 2022
     </footer>
+    <script>
+        function showFormCreate(param){
+            const formCreate = document.getElementById('createticket');
+            if(param === 'open'){
+                formCreate.style.height = "100%";
+            } else {
+                formCreate.style.height = "0";
+            }
+        }
+    </script>
 </body>
 </html>

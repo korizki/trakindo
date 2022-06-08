@@ -251,7 +251,6 @@ footer{
     background: rgb(247, 247, 247);
     padding: 20px 50px 38px 50px;
     display: flex;
-    /* box-shadow: 0 3px 10px 0 rgb(233, 233, 233); */
 }
 .container-top>div{
     flex: 1 1 600px;
@@ -272,7 +271,9 @@ footer{
 .container-top>div>p{
     width: 600px;
 }
-.container-top>div>button{
+.container-top>div>a{
+    text-decoration: none;
+    display: inline-block;
     margin-top: 25px;
     background: white;
     color: var(--kuning);
@@ -285,7 +286,7 @@ footer{
     font-weight: 400;
     transition: all 0.4s ease;
 }
-.container-top>div>button:hover, button:focus{
+.container-top>div>a:hover, a:focus{
     outline: none;
     background: var(--kuning);
     color: white;
@@ -380,7 +381,6 @@ footer{
 .contentBox:hover{
     position: relative;
     transform: translateY(-10px);
-    
 }
 .contentBox>img{
     width: 300px;
@@ -403,4 +403,55 @@ footer{
     background: var(--hitam);
     color: white;
     box-shadow: 0 0 10px 0 grey;
+}
+.addTicketBox{
+    width: 60%;
+    margin: 50px 0;
+    margin-left: 20%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgb(216, 216, 216);
+}
+#createticket{
+    padding-top: 10px;
+    height: 0;
+    overflow: hidden;
+}
+.addTicketBox>h1{
+    padding: 15px;
+    color: white;
+    border-radius: 3px;
+    text-align: center;
+    background: var(--kuning);
+    border-radius: 10px 10px 0 0;
+}
+.addTicketBox>form{
+    padding: 30px 50px 50px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.joinEmail{
+    display: flex;
+    gap: 20px;
+}
+.joinEmail>div{
+    flex: 1;
+}
+.sendTicket{
+    margin-top: 20px;
+    padding: 15px 25px;
+    background: var(--kuning);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-weight: 400;
+    border: none;
+    font-size: 1rem;
+}
+.sendTicket:hover{
+    box-shadow: 0 0 10px 0 var(--kuning);
+}
+.addTicketBox>form>a{
+    text-align: center;
+    display: block;
 }
