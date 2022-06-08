@@ -1,5 +1,13 @@
-let passwordStatus = 0;
+function animate(id, type){
+    document.getElementById(id).style.transform = `${type}(0)`;
+    document.getElementById(id).style.opacity = '1';
+}
+animate('illus1', 'translateX');
+animate('illus2', 'translateY');
+animate('illus3', 'translateY');
 
+
+let passwordStatus = 0;
 function hideFormCreateUser(params){
     const form = document.getElementById("outer");
     if(params == "show"){

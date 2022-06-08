@@ -15,7 +15,10 @@
 }
 html{
     scroll-behavior: smooth;
-    font-size: 20px;
+    font-size: 18px;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: 400;
 }
 .container{
     display: flex;
@@ -40,12 +43,18 @@ html{
     font-size: 2.5rem;
     padding: 15px 30px 10px 30px;
     border-bottom: 8px solid var(--hitam);
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 1.4s ease;
 }
 .leftSide>img{
     width: 200px;
     position: absolute;
     top: 30px;
     left: 30px;
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: all 1.4s ease;
 }
 .leftSide>figure{
     width: 100%;
@@ -54,6 +63,9 @@ html{
 .leftSide>figure>img{
     width: 80%;
     margin-left: 10%;
+    opacity: 0;
+    transform: translateX(-500px);
+    transition: all 1.4s ease;
 }
 .rightSide{
     padding: 40px;
@@ -141,6 +153,7 @@ footer{
     position: relative;
     bottom: 0px;
     width: 100%;
+    font-weight: 400;
 }
 .info{
     font-size: 0.8rem;
@@ -198,4 +211,196 @@ footer{
     padding: 15px 0 15px 30px;
     font-weight: 600;
     font-size: 1.5rem;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 0 5px 0 rgb(185, 185, 185);
+}
+.leftNav > img{
+    width: 170px;
+    flex: 1 1 500px;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+}
+.rightNav{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    color: grey;
+}
+.rightNav >a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 30px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    border-radius: 7px;
+    color: grey;
+}
+.rightNav>a:hover{
+    color: white;
+    background: var(--kuning);
+    box-shadow: 0 0 10px 0 rgba(192, 148, 3, 0.589);
+}
+.container-top{
+    /* height: 30px; */
+    background: rgb(247, 247, 247);
+    padding: 20px 50px 38px 50px;
+    display: flex;
+    /* box-shadow: 0 3px 10px 0 rgb(233, 233, 233); */
+}
+.container-top>div{
+    flex: 1 1 600px;
+    flex-wrap: wrap;
+    color: rgb(105, 105, 105);
+}
+.container-top> div>h1{
+    font-weight: 600;
+    margin: 18px 0;
+}
+.container-top>div>h4{
+    font-weight: 200;
+}
+.container-top>div>h3{
+    margin: 5px 0;
+    font-weight: 600;
+}
+.container-top>div>p{
+    width: 600px;
+}
+.container-top>div>button{
+    margin-top: 25px;
+    background: white;
+    color: var(--kuning);
+    border: 3px solid var(--kuning);
+    padding: 13px 25px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    font-weight: 400;
+    transition: all 0.4s ease;
+}
+.container-top>div>button:hover, button:focus{
+    outline: none;
+    background: var(--kuning);
+    color: white;
+    box-shadow: 0 0 15px 0 rgb(211, 156, 4);
+}
+.content{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.sumTicket{
+    padding: 15px 20px;
+    background: white;
+    flex: 1;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgb(230, 230, 230);
+    border: 1px solid rgb(238, 238, 238);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.sumTicket:hover{
+    transform: translateY(-7px);
+}
+.sumTicket>img{
+    width: 110px;
+    position: relative;
+    float: right;
+    margin-top: -30px;
+    opacity: 0.4;
+}
+.sumTicket>h3{
+    font-size: 1.7rem;
+    font-weight: 600;
+    color:rgb(121, 121, 121);
+    margin-top: 5px;
+}
+@keyframes move{
+    from {
+        opacity: 0;
+        transform: translateY(-200px);
+    } 
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes moveUp{
+    from {
+        opacity: 0;
+        transform: translateY(200px);
+    } 
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#ticket1, #ticket2, #ticket3{
+    animation: move 2s;
+    transition: all 0.3s ease;
+}
+#ticket2{
+    animation: moveUp 2s;
+}
+#ticket1:hover, #ticket2:hover, #ticket3:hover{
+    transform: translateY(-7px);
+}
+.container-down{
+    width: 80%;
+    margin: 40px 10%;
+}
+.container-down>h1{
+    font-weight: 600;
+    font-size: 2.5rem;
+    padding-bottom: 10px;
+    border-bottom: 6px solid var(--kuning);
+    margin-bottom: 30px;
+}
+.secondBox{
+    display: flex;
+    padding: 30px 20px;
+    justify-content: space-between;
+}
+.contentBox{
+    text-align: center;
+    cursor: pointer;
+    padding: 30px;
+    transition: transform 0.3s ease;
+}
+.contentBox:hover{
+    position: relative;
+    transform: translateY(-10px);
+    
+}
+.contentBox>img{
+    width: 300px;
+}
+.contentBox>div>a{
+    display: inline-block;
+    padding: 12px 30px;
+    border: 3px solid var(--hitam);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 400;
+    color: var(--hitam);
+    margin-top: 20px;
+    transition: all 0.3s ease
+}
+.contentBox>div>p{
+    margin-top: 7px;
+}
+.contentBox>div>a:hover{
+    background: var(--hitam);
+    color: white;
+    box-shadow: 0 0 10px 0 grey;
 }

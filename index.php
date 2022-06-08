@@ -11,10 +11,10 @@
 <body>
     <main class="container">
         <div class="leftSide">
-        <img src="./assets/icons/trakindo.png" alt="icontrackindo">
-            <h1>Maintenance Ticketing System</h1>
+        <img id="illus2" src="./assets/icons/trakindo.png" alt="icontrackindo">
+            <h1 id="illus3">Maintenance Ticketing System</h1>
             <figure>
-                <img src="./assets/images/loginillus.svg" alt="illustration">
+                <img id="illus1" src="./assets/images/loginillus.svg" alt="illustration">
             </figure>
         </div>
         <div class="rightSide">
@@ -37,6 +37,10 @@
                             if(isset($_GET['status'])){
                                 if($_GET['status'] === "successadd"){
                                     echo "<p class='info created'>Data User berhasil ditambahkan, silahkan Log In.</p>";
+                                } else if($_GET['status'] === "loggedout") {
+                                    session_start();
+                                    session_destroy();
+                                    echo "<script>alert('Anda berhasil Log Out, Terima Kasih.')</script>";
                                 } else {
                                     echo "<p class='info salah'>Username atau password yang anda masukkan tidak sesuai, silahkan coba kembali!</p>";
                                 }
