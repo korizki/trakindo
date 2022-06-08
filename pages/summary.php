@@ -7,6 +7,7 @@
     <title>Summary Page - Trakindo MTS</title>
     <link rel="icon" href="../assets/icons/laptop.png" />
     <link rel="stylesheet" href="../assets/styles/app.css" />
+    <link rel="stylesheet" href="../assets/styles/responsive.css" />
 </head>
 <body>
     <!-- validasi session -->
@@ -30,6 +31,24 @@
             <h4>Anda Log In sebagai, <?php echo $username ?> </h4>
             <a href="../index.php?status=loggedout" onClick="return confirm('Anda yakin ingin Log Out?')"><i class="fi fi-rs-sign-out-alt adjust"></i> Log Out</a>
         </div>
+    </nav>
+    <nav class="navmobile">
+        <a>
+            <i class="fi fi-rs-home"></i>
+            <p>Beranda</p>
+        </a>
+        <a>
+            <i class="fi fi-rs-chart-histogram"></i>
+            <p>Ticket Dibuat</p>
+        </a>
+        <a>
+            <i class="fi fi-rs-list-check"></i>
+            <p>Semua Ticket</p>
+        </a>
+        <a>
+            <i class="fi fi-rs-sign-out-alt"></i>
+            <p>Keluar</p>
+        </a>
     </nav>
     <main>
         <div class="container-top">

@@ -1,0 +1,144 @@
+@media screen and (max-width: 480px){
+    html{
+        font-size: 14px;
+    }
+    .navmobile{
+        display: block;
+        position: fixed;
+        z-index: 21;
+        bottom: 0;
+        padding: 12px 25px;
+        display: flex;
+        background: white;
+        border-top: 1px solid rgb(214, 214, 214);
+        width: 100%;
+        justify-content: space-between;
+        color: rgb(163, 163, 163);
+    }
+    .navmobile >a {
+        text-align: center;
+        font-size: 0.8rem;
+    }
+    .navmobile>a>p{
+        font-weight: 400;
+    }
+    .navmobile>a>i{
+        font-size: 1.2rem;
+        
+    }
+    .leftSide{
+        gap: 0;
+        margin-top: 50px;
+        flex-direction: column-reverse;
+    }
+    .leftSide>h1{
+        text-align: center;
+        font-size: 2.7rem;
+        padding-bottom: 20px;
+    }
+    .leftSide>img{
+        width: 130px;
+        top: 15px;
+        left: 15px;
+    }
+    .leftSide>figure>img{
+        width: 100%;
+        margin-left: 0;
+        margin-top: 30px;
+    }
+    .rightSide{
+        padding: 50px 5%;
+    }
+    .wrapper{
+        padding: 30px;
+    }
+    .addForm{
+        width: 90%;
+        margin: 10% 5% 0 5%;
+    }
+    .formtitle>h3{
+        font-size: 1.7rem;
+    }
+    footer{
+        line-height: 1.8rem;
+    }
+    .nav{
+        padding: 10px 15px ;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 0 10px 0 rgb(223, 223, 223);
+        z-index: 20;
+    }
+    .leftNav>img{
+        width: 130px;
+    }
+    .rightNav{
+        display: none;
+    }
+    .container-top{
+        padding: 30px;
+        flex-direction: column;
+    }
+    .container-top>div>h1{
+        margin-top: 60px;
+    }
+    .container-top>div{
+        width: 100%;
+        flex: 1;
+    }
+    .container-top>div>p{
+        width: 100%;
+    }
+    .container-top>div>a{
+        margin-bottom: 50px;
+    }
+    .content{
+        flex-direction: column;
+    }
+    #ticket1, #ticket2, #ticket3{
+        width: 100%;
+    }
+    .sumTicket>p{
+        font-size: 1.3rem;
+    }
+    .sumTicket>h3{
+        font-size: 2.5rem;
+    }
+    .sumTicket>img{
+        margin-top: -50px;
+        margin-bottom: -20px;
+    }
+    #ticket2>img{
+        margin: -45px 0 -35px 0 !important;
+    }
+    .secondBox{
+        flex-direction: column;
+        padding: 0;
+    }
+    .contentBox{
+        padding: 30px 0;
+    }
+    .contentBox>img{
+        width: 250px;
+    }
+    .addTicketBox{
+        margin-top: 80px;
+        width: 90%;
+        margin-left: 5%;
+        box-shadow: 0 0 10px 0 rgb(216 216 216);
+    }
+    .addTicketBox>h1{
+        padding: 20px;
+    }
+    .addTicketBox>form{
+        padding: 28px;
+    }
+    .joinEmail{
+        flex-direction: column;
+    }
+    footer{
+        padding-bottom: 75px;
+    }
+}

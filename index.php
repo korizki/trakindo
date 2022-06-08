@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maintenance Ticketing System - Trakindo Utama</title>
     <link rel="stylesheet" href="./assets/styles/app.css">
+    <link rel="stylesheet" href="./assets/styles/responsive.css">
     <link rel="icon" href="./assets/icons/laptop.png" />
 </head>
 <body>

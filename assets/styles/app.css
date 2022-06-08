@@ -47,6 +47,9 @@ h1,h2,h3,h4,h5,h6{
     transform: translateY(100px);
     transition: all 1.4s ease;
 }
+.navmobile{
+    display: none;
+}
 .leftSide>img{
     width: 200px;
     position: absolute;
