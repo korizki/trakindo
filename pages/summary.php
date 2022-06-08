@@ -19,7 +19,9 @@
         } else {
             header("Location: ../index.php");
         };
+        include "../controller/summaryProcess.php";
     ?>
+    
     <nav class="nav">
         <div class="leftNav">
             <img src="../assets/icons/trakindo.png" alt="logo">
@@ -41,17 +43,17 @@
             <div class="content">
                 <div class="sumTicket" id="ticket1">
                     <p>Ticket Dibuat</p>
-                    <h3>3</h3>
+                    <h3><?php echo $ticket_created['TOTAL'] === "" ? 0 : $ticket_created['TOTAL'] ?></h3>
                     <img src="../assets/icons/create.png" alt="icon">
                 </div>
                 <div class="sumTicket" id="ticket2">
                     <p>Ticket Pending Action</p>
-                    <h3>1000</h3>
+                    <h3><?php echo $ticket_pending['TOTAL'] === "" ? 0 : $ticket_pending['TOTAL'] ?></h3>
                     <img src="../assets/icons/pending.png" alt="icon" style="width: 120px; margin-top: -30px">
                 </div>
                 <div class="sumTicket" id="ticket3">
                     <p>Ticket Selesai</p>
-                    <h3>10</h3>
+                    <h3><?php echo $ticket_closed['TOTAL'] === "" ? 0 : $ticket_closed['TOTAL'] ?></h3>
                     <img src="../assets/icons/finish.png" alt="icon">
                 </div>
             </div>
@@ -62,35 +64,70 @@
                 <form action="../controller/submitTicket.php" method="post" autocomplete="off">
                     <div class="inputBox">
                         <label for="sn">Serial Number Unit</label>
-                        <input type="text" id="sn" name="sn">
+                        <input type="text" id="sn" name="sn" required>
                     </div>
                     <div class="inputBox">
                         <label for="company">Nama Perusahaan</label>
-                        <input type="text" id="company" name="company" value="<?php echo $_SESSION['logged_user_comp'] ?>" disabled>
+                        <input type="text" id="company" name="company" value="<?php echo $_SESSION['logged_user_comp'] ?>" disabled required>
                     </div>
                     <div class="inputBox">
                         <label for="job">Jenis Pekerjaan</label>
-                        <input type="text" id="job" name="job">
+                        <input type="text" id="job" name="job" required>
                     </div>
                     <div class="inputBox">
                         <label for="date">Tanggal Permintaan</label>
-                        <input type="date" id="date" name="date">
+                        <input type="date" id="date" name="date" required>
                     </div>
                     <div class="joinEmail">
                         <div class="inputBox">
                             <label for="email">Contact Email</label>
-                            <input type="email" id="email" name="email">
+                            <input type="email" id="email" name="email" required>
                         </div>
                         <div class="inputBox">
                             <label for="phone">Contact Mobile Phone</label>
-                            <input type="phone" id="phone" name="phone">
+                            <input type="phone" id="phone" name="phone" required>
                         </div>
                     </div>
-                    <button type="submit" class="sendTicket">Submit Ticket</button>
+                    <button type="submit" name="createTicket" class="sendTicket">Submit Ticket</button>
                     <a href="#" onClick="showFormCreate('close')">Batal</a>
                 </form>
             </div>
         </div>
+        <?php 
+            if(isset($_GET['status'])){
+                if($_GET['status'] === 'create-ticket-success'){
+                    echo "
+                    <p class='infoCreate'>
+                        Selamat, ticket berhasil dibuat dan akan segera diproses. Mohon bersabar menunggu response/update selanjutnya. Terima Kasih. 
+                    </p>
+                    <script>
+                        const pesan = document.querySelector('.infoCreate');
+                        pesan.style.transform = 'translateY(0)';
+                        pesan.style.opacity = '1';
+                        setTimeout(() => {
+                            pesan.style.transform = 'translateY(-50px)';
+                            pesan.style.opacity = '0';
+                        },5000)
+                    </script>
+                    ";
+                } else if($_GET['status'] === 'create-ticket-failed'){
+                    echo "
+                    <p class='infoCreate failed'>
+                        Ticket gagal dibuat, mohon periksa kembali data yang diinput! 
+                    </p>
+                    <script>
+                        const pesan = document.querySelector('.failed');
+                        pesan.style.transform = 'translateY(0)';
+                        pesan.style.opacity = '1';
+                        setTimeout(() => {
+                            pesan.style.transform = 'translateY(-50px)';
+                            pesan.style.opacity = '0';
+                        },5000)
+                    </script>
+                    ";
+                };   
+            }
+        ?>
         <div class="container-down">
             <h1>Monitoring Ticket</h1>
             <div class="secondBox">

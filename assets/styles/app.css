@@ -104,7 +104,8 @@ h1,h2,h3,h4,h5,h6{
 .inputBox>label{
     margin: 20px 0 10px 0;
     font-size: 1rem;
-    font-weight: 200;
+    font-weight: 400;
+    color: rgb(167, 167, 167);
 }
 .inputBox>label:first-child{
     margin-top: 0;
@@ -114,6 +115,7 @@ h1,h2,h3,h4,h5,h6{
     padding: 10px 20px;
     font-size: 1rem;
     border-radius: 5px;
+    /* font-weight: 400; */
 }
 .inputBox>input:focus{
     outline: none;
@@ -358,7 +360,7 @@ footer{
 }
 .container-down{
     width: 80%;
-    margin: 40px 10%;
+    margin: 20px 10%;
 }
 .container-down>h1{
     font-weight: 600;
@@ -378,9 +380,9 @@ footer{
     padding: 30px;
     transition: transform 0.3s ease;
 }
-.contentBox:hover{
+.contentBox:hover {
     position: relative;
-    transform: translateY(-10px);
+    transform: translateY(-5px);
 }
 .contentBox>img{
     width: 300px;
@@ -454,4 +456,34 @@ footer{
 .addTicketBox>form>a{
     text-align: center;
     display: block;
+}
+.addTicketBox>form>a:focus{
+    background : transparent;
+    color: inherit;
+    box-shadow: none;
+}
+.infoCreate{
+    text-align: center;
+    border: 1px solid green;
+    color: green;
+    background: rgba(0, 128, 0, 0.050);
+    padding: 15px;
+    border-radius: 6px;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all 1s ease;
+}
+.wrapper>p>a:focus{
+    color: inherit;
+    background: transparent;
+    box-shadow: none;
+}
+.failed{
+    border: 1px solid red;
+    color: red;
+    background: rgba(255, 0, 0, 0.050);
+    position: relative;
 }
