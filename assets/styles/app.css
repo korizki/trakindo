@@ -18,6 +18,10 @@ html{
     --hitam: rgb(73, 73, 73);
     --border: rgb(197,197,197);
 }
+#date{
+    font-family: inherit;
+    font-size: inherit;
+}
 html{
     scroll-behavior: smooth;
     font-size: 18px;
@@ -125,7 +129,8 @@ h1,h2,h3,h4,h5,h6{
     padding: 10px 20px;
     font-size: 1rem;
     border-radius: 5px;
-    /* font-weight: 400; */
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 .inputBox>input:focus{
     outline: none;
@@ -355,22 +360,9 @@ footer{
         transform: translateY(0);
     }
 }
-@keyframes moveUp{
-    from {
-        opacity: 0;
-        transform: translateY(200px);
-    } 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 #ticket1, #ticket2, #ticket3{
     animation: move 2s;
     transition: all 0.3s ease;
-}
-#ticket2{
-    animation: moveUp 2s;
 }
 #ticket1:hover, #ticket2:hover, #ticket3:hover{
     transform: translateY(-7px);
@@ -506,7 +498,7 @@ footer{
 }
 .footerbox{
     display: flex;
-    padding: 50px 50px;
+    padding: 50px 10%;
     justify-content: space-between;
     text-align: left;
 }
@@ -516,6 +508,7 @@ footer{
 .footersection>p{
     line-height: 1.6rem;
     font-size: 0.9rem;
+    font-weight: 200;
 }
 .title{
     padding: 20px;

@@ -15,6 +15,16 @@
         justify-content: space-between;
         color: rgb(163, 163, 163);
     }
+    @keyframes move{
+        from {
+            opacity: 0;
+            transform: translateX(-100px);
+        } 
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
     .navmobile >a {
         text-align: center;
         font-size: 0.8rem;
