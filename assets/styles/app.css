@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600&display=swap');
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 200;
+}
+:root{
+    --kuning: #ffaf10;
+    --hitam: rgb(73, 73, 73);
+    --border: rgb(197,197,197);
+}
+html{
+    scroll-behavior: smooth;
+    font-size: 18px;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: 400;
+}
+.container{
+    display: flex;
+    flex: 1 1 800px;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.leftSide{
+    background-image: url('../images/bg.svg');
+    background-position: top;
+    width: 900px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+.leftSide>h1{
+    margin-top: 100px;
+    color: var(--kuning);
+    font-weight: 600;
+    font-size: 2.5rem;
+    padding: 15px 30px 10px 30px;
+    border-bottom: 8px solid var(--hitam);
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 1.4s ease;
+}
+.navmobile{
+    display: none;
+}
+.leftSide>img{
+    width: 200px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: all 1.4s ease;
+}
+.leftSide>figure{
+    width: 100%;
+    margin: 0 auto;
+}
+.leftSide>figure>img{
+    width: 80%;
+    margin-left: 10%;
+    opacity: 0;
+    transform: translateX(-500px);
+    transition: all 1.4s ease;
+}
+.rightSide{
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgb(241, 241, 241);
+}
+.loginForm{
+    /* border: 1px solid var(--border); */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0 rgb(167, 167, 167);
+    padding-bottom: 30px;
+}
+.loginForm>form>h3{
+    background: var(--hitam);
+    color: var(--kuning);
+    padding: 15px 0;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 400;
+}
+.wrapper{
+    padding: 30px 40px;
+    display: flex;
+    flex-direction:column;
+    gap: 20px;
+}
+.inputBox{
+    display: flex;
+    flex-direction: column;
+}
+.inputBox>label{
+    margin: 20px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(167, 167, 167);
+}
+.inputBox>label:first-child{
+    margin-top: 0;
+}
+.inputBox>input{
+    border: 2px solid rgb(216, 216, 216);
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    /* font-weight: 400; */
+}
+.inputBox>input:focus{
+    outline: none;
+    position: relative;
+    border: 2px solid rgb(94, 145, 255);
+    box-shadow: 0 0 6px 0 rgba(122, 122, 255, 0.61);
+}
+.adjust{
+    display: inline-block;
+    transform: translate(-7px, 3px);
+}
+.adjusts{
+    display: inline-block;
+    transform: translate(-7px, 2px);
+}
+.wrapper>button{
+    padding: 15px 20px;
+    background: var(--hitam);
+    color: var(--kuning);
+    width: 100%;
+    font-size: 1rem;
+    border: 1px solid var(--hitam);
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.wrapper>button:hover, button:focus{
+    outline: none;
+    box-shadow: 0 0 10px 0 rgb(61, 61, 61);
+}
+.wrapper>p{
+    text-align: center;
+}
+footer{
+    background: var(--hitam);
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    font-weight: 400;
+}
+.info{
+    font-size: 0.8rem;
+    border: 1px solid grey;
+    padding: 13px 25px;
+    line-height: 1.1rem;
+    border-radius: 5px;
+}
+.salah{
+    background: rgba(255, 0, 0, 0.050);
+    border: 1px solid red;
+    color: red;
+}
+.created{
+    background: rgba(0, 255, 42, 0.05);
+    border: 1px solid rgb(1, 192, 42);
+    color: rgb(1,192,42);
+}
+.outerContainer{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background:rgba(61, 61, 61, 0.534);
+    z-index: 10;
+    transition: transform 0.5s ease;
+    transform: translateY(-5000px);
+}
+.eye{
+    cursor: pointer;
+}
+.addForm{
+    width: 50%;
+    margin: 5% 0 0 25%;
+    background: white;
+    border-radius: 12px;
+    padding: 10px 0;
+    box-shadow: 0 0 10px 0 rgb(230, 229, 229);
+}
+.addForm>form{
+    margin-bottom: 30px;
+}
+.formtitle{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 6px solid var(--kuning);
+    align-items: center;
+    padding: 10px 0 15px 30px;
+    font-size: 1.5rem;
+}
+.formtitle>a{
+    text-decoration: none;
+    font-size: 1rem;
+    margin-right: 30px;
+}
+.formtitle>a:focus{
+    box-shadow: none;
+    background: none;
+    color: black;
+}
+.formtitle>h3{
+    width: 500px;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 0 5px 0 rgb(185, 185, 185);
+}
+.leftNav > img{
+    width: 170px;
+    flex: 1 1 500px;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+}
+.rightNav{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    color: grey;
+}
+.rightNav >a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 30px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    border-radius: 7px;
+    color: grey;
+}
+.rightNav>a:hover{
+    color: white;
+    background: var(--kuning);
+    box-shadow: 0 0 10px 0 rgba(192, 148, 3, 0.589);
+}
+.container-top{
+    /* height: 30px; */
+    background: rgb(247, 247, 247);
+    padding: 20px 50px 38px 50px;
+    display: flex;
+}
+.container-top>div{
+    flex: 1 1 600px;
+    flex-wrap: wrap;
+    color: rgb(105, 105, 105);
+}
+.container-top> div>h1{
+    font-weight: 600;
+    margin: 18px 0;
+}
+.container-top>div>h4{
+    font-weight: 200;
+}
+.container-top>div>h3{
+    margin: 5px 0;
+    font-weight: 600;
+}
+.container-top>div>p{
+    width: 600px;
+}
+.container-top>div>a{
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 25px;
+    background: white;
+    color: var(--kuning);
+    border: 3px solid var(--kuning);
+    padding: 13px 25px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    font-weight: 400;
+    transition: all 0.4s ease;
+}
+.container-top>div>a:hover, a:focus{
+    outline: none;
+    background: var(--kuning);
+    color: white;
+    box-shadow: 0 0 15px 0 rgb(211, 156, 4);
+}
+.content{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.sumTicket{
+    padding: 15px 20px;
+    background: white;
+    flex: 1;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgb(230, 230, 230);
+    border: 1px solid rgb(238, 238, 238);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.sumTicket:hover{
+    transform: translateY(-7px);
+}
+.sumTicket>img{
+    width: 110px;
+    position: relative;
+    float: right;
+    margin-top: -30px;
+    opacity: 0.4;
+}
+.sumTicket>h3{
+    font-size: 1.7rem;
+    font-weight: 600;
+    color:rgb(121, 121, 121);
+    margin-top: 5px;
+}
+@keyframes move{
+    from {
+        opacity: 0;
+        transform: translateY(-200px);
+    } 
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes moveUp{
+    from {
+        opacity: 0;
+        transform: translateY(200px);
+    } 
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#ticket1, #ticket2, #ticket3{
+    animation: move 2s;
+    transition: all 0.3s ease;
+}
+#ticket2{
+    animation: moveUp 2s;
+}
+#ticket1:hover, #ticket2:hover, #ticket3:hover{
+    transform: translateY(-7px);
+}
+.container-down{
+    width: 80%;
+    margin: 20px 10%;
+}
+.container-down>h1{
+    font-weight: 600;
+    font-size: 2.5rem;
+    padding-bottom: 10px;
+    border-bottom: 6px solid var(--kuning);
+    margin-bottom: 30px;
+}
+.secondBox{
+    display: flex;
+    padding: 30px 20px;
+    justify-content: space-between;
+}
+.contentBox{
+    text-align: center;
+    cursor: pointer;
+    padding: 30px;
+    transition: transform 0.3s ease;
+}
+.contentBox:hover {
+    position: relative;
+    transform: translateY(-5px);
+}
+.contentBox>img{
+    width: 300px;
+}
+.contentBox>div>a{
+    display: inline-block;
+    padding: 12px 30px;
+    border: 3px solid var(--hitam);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 400;
+    color: var(--hitam);
+    margin-top: 20px;
+    transition: all 0.3s ease
+}
+.contentBox>div>p{
+    margin-top: 7px;
+}
+.contentBox>div>a:hover{
+    background: var(--hitam);
+    color: white;
+    box-shadow: 0 0 10px 0 grey;
+}
+.addTicketBox{
+    width: 60%;
+    margin: 50px 0;
+    margin-left: 20%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgb(216, 216, 216);
+}
+#createticket{
+    padding-top: 10px;
+    height: 0;
+    overflow: hidden;
+}
+.addTicketBox>h1{
+    padding: 15px;
+    color: white;
+    border-radius: 3px;
+    text-align: center;
+    background: var(--kuning);
+    border-radius: 10px 10px 0 0;
+}
+.addTicketBox>form{
+    padding: 30px 50px 50px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.joinEmail{
+    display: flex;
+    gap: 20px;
+}
+.joinEmail>div{
+    flex: 1;
+}
+.sendTicket{
+    margin-top: 20px;
+    padding: 15px 25px;
+    background: var(--kuning);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-weight: 400;
+    border: none;
+    font-size: 1rem;
+}
+.sendTicket:hover{
+    box-shadow: 0 0 10px 0 var(--kuning);
+}
+.addTicketBox>form>a{
+    text-align: center;
+    display: block;
+}
+.addTicketBox>form>a:focus{
+    background : transparent;
+    color: inherit;
+    box-shadow: none;
+}
+.infoCreate{
+    text-align: center;
+    border: 1px solid green;
+    color: green;
+    background: rgba(0, 128, 0, 0.050);
+    padding: 15px;
+    border-radius: 6px;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all 1s ease;
+}
+.wrapper>p>a:focus{
+    color: inherit;
+    background: transparent;
+    box-shadow: none;
+}
+.failed{
+    border: 1px solid red;
+    color: red;
+    background: rgba(255, 0, 0, 0.050);
+    position: relative;
+}
+.footerbox{
+    display: flex;
+    padding: 50px 50px;
+    justify-content: space-between;
+    text-align: left;
+}
+.footersection>h3{
+    margin-bottom: 20px;
+}
+.footersection>p{
+    line-height: 1.6rem;
+    font-size: 0.9rem;
+}
+.title{
+    padding: 20px;
+    border-top: 3px solid var(--kuning);
+    font-size: 1rem;
+}
