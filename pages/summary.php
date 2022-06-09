@@ -1,3 +1,15 @@
+<!-- validasi session -->
+<?php
+    session_start();
+    if(isset($_SESSION['logged_user'])){
+        $username = $_SESSION['logged_user'];
+        $company = $_SESSION['logged_user_comp'];
+        $type = $_SESSION['logged_user_type'];
+    } else {
+        header("Location: ../index.php");
+    };
+    include "../controller/summaryProcess.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,19 +21,19 @@
     <link rel="stylesheet" href="../assets/styles/app.css" />
     <link rel="stylesheet" href="../assets/styles/responsive.css" />
 </head>
+<style>
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+    a:focus{
+        box-shadow: none;
+        background: none;
+        color: inherit;
+    }
+</style>
 <body>
-    <!-- validasi session -->
-    <?php
-        session_start();
-        if(isset($_SESSION['logged_user'])){
-            $username = $_SESSION['logged_user'];
-            $company = $_SESSION['logged_user_comp'];
-            $type = $_SESSION['logged_user_type'];
-        } else {
-            header("Location: ../index.php");
-        };
-        include "../controller/summaryProcess.php";
-    ?>
+    
     
     <nav class="nav">
         <div class="leftNav">
@@ -33,19 +45,19 @@
         </div>
     </nav>
     <nav class="navmobile">
-        <a>
+        <a class="navitem" id="btnhome" onClick="activebtn('btnhome')">
             <i class="fi fi-rs-home"></i>
             <p>Beranda</p>
         </a>
-        <a>
+        <a class="navitem" id="btnticket" onClick="activebtn('btnticket')">
             <i class="fi fi-rs-chart-histogram"></i>
             <p>Ticket Dibuat</p>
         </a>
-        <a>
+        <a class="navitem" id="btntickets" onClick="activebtn('btntickets')">
             <i class="fi fi-rs-list-check"></i>
             <p>Semua Ticket</p>
         </a>
-        <a>
+        <a class="navitem" id="btnout" onClick="return confirm('Anda yakin ingin Log Out?')" href="../index.php?status=loggedout">
             <i class="fi fi-rs-sign-out-alt"></i>
             <p>Keluar</p>
         </a>
@@ -108,7 +120,7 @@
                         </div>
                     </div>
                     <button type="submit" name="createTicket" class="sendTicket">Submit Ticket</button>
-                    <a href="#" onClick="showFormCreate('close')">Batal</a>
+                    <a href="#" style="text-decoration: none; color: inherit" onClick="showFormCreate('close')">Batal</a>
                 </form>
             </div>
         </div>
@@ -195,6 +207,13 @@
             } else {
                 formCreate.style.height = "0";
             }
+        }
+        function activebtn(param){
+            document.getElementById('btnticket').style.color = "rgb(163,163,163)";
+            document.getElementById('btntickets').style.color = "rgb(163,163,163)";
+            document.getElementById('btnhome').style.color = "rgb(163,163,163)";
+            document.getElementById('btnout').style.color = "rgb(163,163,163)";
+            document.getElementById(param).style.color = "var(--kuning)";
         }
     </script>
 </body>

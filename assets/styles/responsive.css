@@ -19,6 +19,9 @@
         text-align: center;
         font-size: 0.8rem;
     }
+    .inputBox > #date{
+        width: 100%;
+    }
     .navmobile>a>p{
         font-weight: 400;
     }
