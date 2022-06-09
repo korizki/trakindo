@@ -38,7 +38,7 @@
             <img src="../assets/icons/trakindo.png" alt="logo">
         </div>
         <div class="rightNav">
-            <h4>Anda Log In sebagai, <?php echo $username ?> </h4>
+            <h4>Selamat datang <?php echo $username ?> </h4>
             <a href="../index.php?status=loggedout" onClick="return confirm('Anda yakin ingin Log Out?')"><i class="fi fi-rs-sign-out-alt adjust"></i> Log Out</a>
         </div>
     </nav>
@@ -74,12 +74,15 @@
         if($_SESSION['logged_user_type'] === 'user'){ 
             if(isset($_GET['page'])){
                 $page = $_GET['page'];
-                if($page === 'ticket-pending'){
-                    include "pendingTicket.php";
-                    echo "<script>clickbtn('btnticket')</script>";
-                } else if($page === 'all-ticket'){
-                    include "allTicket.php";
-                    echo "<script>clickbtn('btntickets')</script>";
+                switch ($page) {
+                    case "ticket-pending" : 
+                        include "pendingTicket.php";
+                        echo "<script>clickbtn('btnticket')</script>";
+                        break;
+                    case "all-ticket" : 
+                        include "allTicket.php";
+                        echo "<script>clickbtn('btntickets')</script>";
+                        break;
                 }
             } else {
                 // mengembalikan ke halaman home
@@ -98,13 +101,15 @@
             </div>
             <div class="footersection">
                 <h3>Resource</h3>
-                <p>Icon's by <a>Flaticon<a> </p>
-                <p>Illustration's by <a>Storyset<a> </p>
-                <p>Background by <a>BGjar<a> </p>
+                <p>Icon's by <a href="https://www.flaticon.com/">Flaticon</a> </p>
+                <p>Illustration's by <a href="https://storyset.com/">Storyset</a> </p>
+                <p>Background by <a href="https://bgjar.com/">BGjar</a> </p>
             </div>
         </div>
         <h3 class="title">Maintenance Ticketing System - Trakindo Utama &copy; 2022</h3>
     </footer>
+    
+    
     <script>
         function showFormCreate(param){
             const formCreate = document.getElementById('createticket');

@@ -63,9 +63,9 @@
                 </div>
                 <div class="footersection">
                     <h3>Resource</h3>
-                    <p>Icon's by <a>Flaticon<a> </p>
-                    <p>Illustration's by <a>Storyset<a> </p>
-                    <p>Background by <a>BGjar<a> </p>
+                    <p>Icon's by <a href="https://www.flaticon.com/">Flaticon</a> </p>
+                    <p>Illustration's by <a href="https://storyset.com/">Storyset</a> </p>
+                    <p>Background by <a href="https://bgjar.com/">BGjar</a> </p>
                 </div>
             </div>
             <h3 class="title">Maintenance Ticketing System - Trakindo Utama &copy; 2022</h3>

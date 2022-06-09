@@ -161,4 +161,35 @@
     .sumfooter{
         padding-bottom: 60px;
     }
+    .ticketResult>.item{
+        margin-left: 5%;
+        width: 90%;
+        padding: 20px;
+        font-size: 10px;
+        gap: 13px;
+    }
+    .item{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .item>div{
+        flex-direction: column;
+        gap: 15px;
+    }
+    .item>p{
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    .emptyresult>img{
+        width: 80%;
+    }
+    .emptyresult>h1{
+        margin-top: 20px;
+        font-size: 1.5rem;
+    }
+    .ticketResult>a{
+        display: none;
+    }
 }
