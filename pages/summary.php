@@ -170,8 +170,22 @@
         </div>
 
     </main>
-    <footer>
-        Maintenance Ticketing System - Trakindo Utama &copy; 2022
+    <footer class="sumfooter">
+        <div class="footerbox">
+            <div class="footersection">
+                <h3>Trakindo Utama Muara Enim</h3>
+                <p><i class="fi fi-rs-marker adjust"></i>  Jl. Lintas Prabumulih - Muara Enim, Sumatera Selatan. </p>
+                <p><i class="fi fi-rs-phone-call adjust"></i> (0734) 4252824 </p>
+                <p><i class="fi fi-rs-globe adjust" ></i><a style="text-decoration: none; color: inherit" href="https://www.trakindo.co.id" target="_blank"> www.trakindo.co.id </a></p>
+            </div>
+            <div class="footersection">
+                <h3>Resource</h3>
+                <p>Icon's by <a>Flaticon<a> </p>
+                <p>Illustration's by <a>Storyset<a> </p>
+                <p>Background by <a>BGjar<a> </p>
+            </div>
+        </div>
+        <h3 class="title">Maintenance Ticketing System - Trakindo Utama &copy; 2022</h3>
     </footer>
     <script>
         function showFormCreate(param){
