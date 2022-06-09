@@ -1,3 +1,11 @@
+<?php 
+    if(isset($_GET['status'])){
+        if($_GET['status'] === 'loggedout'){
+            session_start();
+            session_destroy();
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,8 +49,6 @@
                                 if($_GET['status'] === "successadd"){
                                     echo "<p class='info created'>Data User berhasil ditambahkan, silahkan Log In.</p>";
                                 } else if($_GET['status'] === "loggedout") {
-                                    session_start();
-                                    session_destroy();
                                     echo "<script>alert('Anda berhasil Log Out, Terima Kasih.')</script>";
                                 } else {
                                     echo "<p class='info salah'>Username atau password yang anda masukkan tidak sesuai, silahkan coba kembali!</p>";
