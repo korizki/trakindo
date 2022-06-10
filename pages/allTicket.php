@@ -1,3 +1,21 @@
+<?php
+    if(isset($_GET['tglawal'])){
+        $tglawal = $_GET['tglawal'];
+        $tglakhir = $_GET['tglakhir'];
+        $filter = 'date';
+        if(isset($_GET['filter'])){
+            $filter = $_GET['filter'];
+        }
+        $queri = "SELECT * FROM tickets WHERE req_date BETWEEN '$tglawal' AND '$tglakhir' AND requestor = '$username' ORDER BY $filter DESC ";
+    } else {
+       $tglawal = date('Y-m-d');
+       $tglakhir = date('Y-m-d');
+       $queri = "SELECT * FROM tickets WHERE requestor = '$username' ORDER BY req_date DESC";
+    }
+    $no = 1; 
+    $query = mysqli_query($connect, $queri);
+    $total = mysqli_num_rows($query);
+?>
 <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100vh">
     <div class="pendingBox  ">
         <h1>Semua Ticket</h1>
@@ -5,31 +23,23 @@
             <form action="../controller/findData.php" method="get">
                 <div>
                     <label for="tglawal">Tanggal Awal</label>
-                    <input id="tglawal" name="tglawal" type="date" required>
+                    <input id="tglawal" name="tglawal" type="date" value="<?php echo $tglawal?>" required >
                 </div>
                 <div>
                     <label for="tglakhir">Tanggal Akhir</label>
-                    <input id="tglakhir" name="tglakhir" type="date" required>
+                    <input id="tglakhir" name="tglakhir" type="date" value="<?php echo $tglakhir?>" required>
                 </div>
                 <div>
                     <select name="filtertype" id="filtertype">
-                        <option value="date" selected>Urut Berdasarkan Tanggal</option>
-                        <option value="sn">Urut Berdasarkan Serial Number</option>
+                        <option value="req_date" selected>Urut Berdasarkan Tanggal</option>
+                        <option value="sn_unit">Urut Berdasarkan Serial Number</option>
                         <option value="status">Urut Berdasarkan Status</option>
                     </select>
                 </div>
                 <button type="submit" name="filterdate"><i class="fi fi-rs-search adjusts"></i> Filter Ticket</button>
             </form>
             <div class="allresult">
-                <?php 
-                    $no = 1; 
-                    if(isset($_GET['filterdate'])){
-                        echo "dipencet";
-                    }
-                    $query = mysqli_query($connect, "SELECT * FROM tickets WHERE requestor = '$username' ");
-                    $total = mysqli_query($connect, "SELECT COUNT(ticket_id) AS TOTALS FROM tickets WHERE requestor = '$username' ")
-                ?>
-                <h4>Menampilkan hasil pencarian sejumlah <strong><?php echo mysqli_fetch_assoc($total)['TOTALS'] ?></strong> tiket.</h4>
+                <h4>Menampilkan hasil pencarian sejumlah <strong><?php echo $total ?></strong> tiket.</h4>
                 <table>
                     <thead>
                         <tr>
@@ -43,8 +53,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php 
-                            
+                        <?php      
                             while($row = mysqli_fetch_array($query)){
                                 ?>
                                 <tr index="<?php echo $row['ticket_id']?>">

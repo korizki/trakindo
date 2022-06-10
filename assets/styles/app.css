@@ -636,6 +636,9 @@ main{
     border-radius: 6px;
     margin: 5px 0 8px 0;
 }
+.boxFilter{
+    padding: 0;
+}
 .boxFilter>form, .boxFilter>.allresult{
     width: 80%;
     margin-left: 10%;
