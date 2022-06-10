@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maintenance Ticketing System - Trakindo Utama</title>
+    <title>Technician Request - Trakindo Utama</title>
     <link rel="stylesheet" href="./assets/styles/app.css">
     <link rel="stylesheet" href="./assets/styles/responsive.css">
     <link rel="icon" href="./assets/icons/laptop.png" />
@@ -22,14 +22,14 @@
     
         <div class="leftSide">
             <img id="illus2" src="./assets/icons/trakindo.png" alt="icontrackindo">
-            <h1 id="illus3">Maintenance Ticketing System</h1>
+            <h1 id="illus3">Technician Request Muara Enim</h1>
             <figure>
                 <img id="illus1" src="./assets/images/loginillus.svg" alt="illustration">
             </figure>
         </div>
 
         <div class="rightSide">
-            <div class="loginForm">
+            <div class="loginForm" id='add'>
                 <form action="./controller/validateLogin.php" autocomplete="off" method="post">
                     <h3>Form Login</h3>
                     <div class="wrapper">
@@ -74,7 +74,7 @@
                     <p>Background by <a href="https://bgjar.com/">BGjar</a> </p>
                 </div>
             </div>
-            <h3 class="title">Maintenance Ticketing System - Trakindo Utama &copy; 2022</h3>
+            <h3 class="title">Technician Request - Trakindo Utama Muara Enim &copy; 2022</h3>
         </footer>
     </main>
     <div class="outerContainer" id="outer">

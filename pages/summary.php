@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Summary Page - Trakindo MTS</title>
+    <title>Summary Page - Trakindo</title>
     <link rel="icon" href="../assets/icons/laptop.png" />
     <link rel="stylesheet" href="../assets/styles/app.css" />
     <link rel="stylesheet" href="../assets/styles/responsive.css" />
@@ -90,6 +90,7 @@
             };
         }
     ?>
+    
     <footer class="sumfooter">
         <div class="footerbox">
             <div class="footersection">
@@ -105,7 +106,7 @@
                 <p>Background by <a href="https://bgjar.com/">BGjar</a> </p>
             </div>
         </div>
-        <h3 class="title">Maintenance Ticketing System - Trakindo Utama &copy; 2022</h3>
+        <h3 class="title">Technician Request - Trakindo Utama Muara Enim &copy; 2022</h3>
     </footer>
     
     
@@ -125,7 +126,7 @@
             document.getElementById('btnout').style.color = "rgb(163,163,163)";
             document.getElementById(param).style.color = "var(--kuning)";
         }
-        document.getElementById('date').value = new Date().toLocaleDateString('en-CA');
+        
     </script>
 </body>
 </html>

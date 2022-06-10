@@ -626,13 +626,6 @@ main{
     padding-bottom: 7px;
     margin-bottom: 10px; 
 }
-.boxcom{
-    display: flex;
-    gap: 5px;
-    flex-direction: column;
-    align-items: space-between;
-    justify-content: space-between
-}
 .boxcom>h2{
     font-weight: 600;
     display: inline-block;
@@ -641,4 +634,61 @@ main{
     border: 2px solid var(--kuning);
     background: rgba(252, 167, 10, 0.050);
     border-radius: 6px;
+    margin: 5px 0 8px 0;
+}
+.boxFilter>form, .boxFilter>.allresult{
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    border-left: 6px solid var(--hitam);
+    padding: 20px 30px;
+    border-radius: 6px;
+    box-shadow: 0 0 5px 0 rgb(207, 207, 207);
+    font-size: 0.9rem;
+}
+.boxFilter>form>div>input, select{
+    padding: 7px 12px;
+    border: 1px solid rgb(196, 196, 196);
+    border-radius: 5px;
+    margin-left: 10px;
+    font-family: inherit;
+}
+.boxFilter>form>button{
+    background: var(--kuning);
+    color: white;
+    padding: 6px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    flex: 1;
+}
+.boxFilter>form>button:hover, button:focus{
+    box-shadow: 0 0 10px 0 var(--kuning);
+}
+.boxFilter>.allresult{
+    padding: 0 ;
+    border: 0 ;
+    box-shadow: none ;
+    flex-direction: column;
+}
+.allresult>table{
+    border-collapse: collapse;
+    border: 1px solid rgb(226, 226, 226);
+}
+.allresult>table>thead>tr{
+    background: var(--hitam);
+    color: white;
+    text-align: center;
+    font-weight: 400;
+    border: 2px solid rgb(226,226,226);
+    border-bottom: 0;
+}
+.allresult>table>tbody>tr{
+    text-align: center;
+}
+.allresult>table>thead>tr>td, .allresult>table>tbody>tr>td{
+    padding: 12px;
+    
 }

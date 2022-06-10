@@ -192,4 +192,35 @@
     .ticketResult>a{
         display: none;
     }
+    .boxin{
+        gap: 5px;
+        width: 100%;
+    }
+    .icontick{
+        width: 30px;
+    }
+    .boxin>div{
+        width: 100%;
+    }
+    .boxin>div>h1{
+        padding-bottom: 5px;
+        margin-bottom: 8px;
+    }
+    .item>div{
+        width: 100%;
+    }
+    .boxcom>h3{
+        text-align: center;
+    }
+    .infoCreate{
+        line-height: 1.5rem;
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+    .createTicket{
+        margin-bottom: 50px;
+    }
+    .container-top{
+        padding-top: 0;
+    }
 }

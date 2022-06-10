@@ -11,7 +11,7 @@
         $queryAddUser = mysqli_query($connect, "INSERT INTO user VALUES(NULL, '$username', '$password', 'user', '$company' ) ");
         // jika berhasil maka diarahkan ke homepage dengan pesan berhasil tambah data
         if($queryAddUser){
-            header("Location:  ../index.php?status=successadd");
+            header("Location:  ../index.php?status=successadd#add");
         } else {
         // munculkan pesan gagal 
             echo " Gagal Tambah Username";

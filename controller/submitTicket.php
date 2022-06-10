@@ -20,10 +20,10 @@
             $query = mysqli_query($connect, "INSERT INTO tickets VALUES(null,'$username', '$sn', '$job','$date','$email','$phone','Created') ");
             if($query){
                 // jika berhasil munculkan pesan sukses
-                header("Location: ../pages/summary.php?status=create-ticket-success");
+                header("Location: ../pages/summary.php?status=create-ticket-success#status");
             } else {
                 // jika gagal munculkan pesan error
-                header("Location: ../pages/summary.php?status=create-ticket-failed");
+                header("Location: ../pages/summary.php?status=create-ticket-failed#status");
             }    
         } else {
             // redirect ke homepage

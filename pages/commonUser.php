@@ -14,7 +14,7 @@
                 <img src="../assets/icons/create.png" alt="icon">
             </div>
             <div class="sumTicket" id="ticket2">
-                <p>Ticket Pending Action</p>
+                <p>Ticket Menunggu Action</p>
                 <h3><?php echo $ticket_pending['TOTAL'] === "" ? 0 : $ticket_pending['TOTAL'] ?></h3>
                 <img src="../assets/icons/pending.png" alt="icon" style="width: 120px; margin-top: -30px">
             </div>
@@ -64,7 +64,7 @@
         if(isset($_GET['status'])){
             if($_GET['status'] === 'create-ticket-success'){
                 echo "
-                <p class='infoCreate'>
+                <p class='infoCreate' id='status'>
                     Selamat, ticket berhasil dibuat dan akan segera diproses. Mohon bersabar menunggu response/update selanjutnya. Terima Kasih. 
                 </p>
                 <script>
@@ -79,7 +79,7 @@
                 ";
             } else if($_GET['status'] === 'create-ticket-failed'){
                 echo "
-                <p class='infoCreate failed'>
+                <p class='infoCreate failed' id='statusf'>
                     Ticket gagal dibuat, mohon periksa kembali data yang diinput! 
                 </p>
                 <script>
@@ -117,3 +117,6 @@
         </div>
     </div>
 </main>
+<script>
+    document.getElementById('date').value = new Date().toLocaleDateString('en-CA');
+</script>
