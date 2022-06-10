@@ -574,9 +574,9 @@ main{
     color: green;
     font-weight: 400;
     background: rgba(0, 128, 0, 0.082);
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-size: 0.8rem
+    padding: 10px 25px 10px 33px;
+    border-radius: 25px;
+    font-size: 0.8rem;
 }
 .ticketResult>a{
     margin: 20px 10%;
@@ -591,8 +591,54 @@ main{
     margin: 0 auto;
     margin-left: 10%;
 }
+.item>div{
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    justify-content: space-between;
+}
 .emptyresult>img{
     object-fit: contain;
     width: 33%;
-    /* display: none; */
+}
+.icontick{
+    width: 35px;
+}
+.boxin{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex: 1;
+}
+.boxin>div{
+    margin-left: 10px;
+    line-height: 1.3rem;
+    color: rgb(128, 128, 128);
+    width: 300px;
+}
+.boxin>div>div{
+    margin-left: 10px;
+}
+.boxin>div>h1{
+    border-bottom: 1px solid rgb(199, 199, 199);
+    color: var(--hitam);
+    font-weight: 600;
+    padding-bottom: 7px;
+    margin-bottom: 10px; 
+}
+.boxcom{
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: space-between
+}
+.boxcom>h2{
+    font-weight: 600;
+    display: inline-block;
+    padding: 6px 20px;
+    color: var(--kuning);
+    border: 2px solid var(--kuning);
+    background: rgba(252, 167, 10, 0.050);
+    border-radius: 6px;
 }

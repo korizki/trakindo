@@ -16,13 +16,20 @@
                     ?>
                     <div class="item">
                         <div>
-                            <img src="../assets/icons/finish.png" alt="icon">
-                            <div>
+                            <div class="boxin">
+                                <img class="icontick" src="../assets/icons/finish.png" alt="icon">
+                                <div>
+                                    <h1>ID Unit : <?php echo $row['sn_unit']?></h1>
+                                    <div>
+                                        <h3><i class="fi fi-rs-phone-call adjust"></i> <?php echo $row['cp_phone']?> </h3>
+                                        <h3> <i class="fi fi-rs-envelope adjust"></i><?php echo $row['cp_email']?></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="boxcom">
                                 <p>Nomor Ticket : <?php echo $row['ticket_id']?> - <?php echo date_format(date_create($row['req_date']), "d F Y")?></p>
-                                <h1>Serial Number Unit : <?php echo $row['sn_unit']?></h1>
-                                <h3><?php echo $_SESSION['logged_user_comp']?></h3>
-                                <h3><?php echo $row['job_type']?></h3>
-                                <h3 style="margin-left: 10px;"><i class="fi fi-rs-phone-call adjust"></i> <?php echo $row['cp_phone']?> <span style="margin-left: 30px;"></span> <i class="fi fi-rs-envelope adjust"></i><?php echo $row['cp_email']?></h3>
+                                <h2><?php echo $_SESSION['logged_user_comp']?></h2>
+                                <h3 style="font-style: italic">" <?php echo $row['job_type']?> "</h3>
                             </div>
                         </div>
                         <p><i class="fi fi-rs-edit adjust"></i><?php echo $row['status']?></p>

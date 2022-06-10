@@ -1,6 +1,6 @@
 <?php 
     if(isset($_GET['status'])){
-        if($_GET['status'] === 'loggedout'){
+        if($_GET['status'] === "loggedout"){
             session_start();
             session_destroy();
         }
