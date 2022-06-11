@@ -48,11 +48,11 @@
         </a>
         <a href="?page=ticket-pending" class="navitem" id="btnticket" onClick="activebtn('btnticket')">
             <i class="fi fi-rs-chart-histogram"></i>
-            <p>Ticket Dibuat</p>
+            <p>Request Dibuat</p>
         </a>
         <a href="?page=all-ticket" class="navitem" id="btntickets" onClick="activebtn('btntickets')">
             <i class="fi fi-rs-list-check"></i>
-            <p>Semua Ticket</p>
+            <p>Semua Request</p>
         </a>
         <a class="navitem" id="btnout" onClick="return confirm('Anda yakin ingin Log Out?')" href="../index.php?status=loggedout">
             <i class="fi fi-rs-sign-out-alt"></i>
@@ -88,6 +88,23 @@
                 include "commonUser.php";
                 echo "<script>clickbtn('btnhome')</script>";
             };
+        } else if($_SESSION['logged_user_type'] === 'Administrator'){
+            if(isset($_GET['page'])){
+                $page = $_GET['page'];
+                switch ($page) {
+                    case "ticket-pending" : 
+                        include "pendingTicketSu.php";
+                        echo "<script>clickbtn('btnticket')</script>";
+                        break;
+                    case "all-ticket" : 
+                        include "allTicket.php";
+                        echo "<script>clickbtn('btntickets')</script>";
+                        break;
+                }
+            } else {
+                include "adminUser.php";
+                echo "<script>clickbtn('btnhome')</script>";
+            }
         }
     ?>
     

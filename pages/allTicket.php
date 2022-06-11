@@ -12,13 +12,14 @@
        $tglakhir = date('Y-m-d');
        $queri = "SELECT * FROM tickets WHERE requestor = '$username' ORDER BY req_date DESC";
     }
-    $no = 1; 
+    $no = 1;
+    require "../controller/connection.php"; 
     $query = mysqli_query($connect, $queri);
     $total = mysqli_num_rows($query);
 ?>
 <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100vh">
     <div class="pendingBox  ">
-        <h1>Semua Ticket</h1>
+        <h1>Semua Request</h1>
         <div class="ticketResult boxFilter">
             <form action="../controller/findData.php" method="get">
                 <div>
@@ -36,10 +37,10 @@
                         <option value="status">Urut Berdasarkan Status</option>
                     </select>
                 </div>
-                <button type="submit" name="filterdate"><i class="fi fi-rs-search adjusts"></i> Filter Ticket</button>
+                <button type="submit" name="filterdate"><i class="fi fi-rs-search adjusts"></i> Filter Request</button>
             </form>
             <div class="allresult">
-                <h4>Menampilkan hasil pencarian sejumlah <strong><?php echo $total ?></strong> tiket.</h4>
+                <h4>Menampilkan hasil pencarian sebanyak <strong><?php echo $total ?></strong> request.</h4>
                 <table>
                     <thead>
                         <tr>
@@ -63,7 +64,7 @@
                                     <td><?php echo $row['job_type'] ?></td>
                                     <td class="mobile"><?php echo $_SESSION['logged_user_comp'] ?></td>
                                     <td class="mobile"><?php echo $row['cp_phone'] ?></td>
-                                    <td><span class="<?php echo $row['status'] ?>"><?php echo $row['status'] ?></span></td>
+                                    <td><span class="<?php echo $row['status'] ?> row"><?php echo $row['status'] ?></span></td>
                                 </tr>
                                 <?php
                             }

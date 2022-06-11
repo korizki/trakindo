@@ -100,6 +100,7 @@
     }
     .container-top>div>p{
         width: 100%;
+        margin-bottom: 20px;
     }
     .container-top>div>a{
         margin-bottom: 50px;
@@ -255,4 +256,9 @@
     .mobile{
         display: none;
     }
+    .uniq{
+        position: relative;
+        transform: translateX(-30px);
+    }
+    
 }

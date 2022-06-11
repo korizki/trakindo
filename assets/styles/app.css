@@ -50,6 +50,7 @@ h1,h2,h3,h4,h5,h6{
 .leftSide>h1{
     margin-top: 100px;
     color: var(--kuning);
+    -webkit-text-stroke: 1px rgb(90, 90, 90); 
     font-weight: 600;
     font-size: 2.5rem;
     padding: 15px 30px 10px 30px;
@@ -114,29 +115,30 @@ h1,h2,h3,h4,h5,h6{
 .inputBox{
     display: flex;
     flex-direction: column;
+    color: rgb(61, 61, 61);
 }
 .inputBox>label{
-    margin: 20px 0 10px 0;
+    margin: 20px 0 7px 0;
     font-size: 1rem;
+    color: rgb(65, 65, 65);
     font-weight: 400;
-    color: rgb(167, 167, 167);
 }
 .inputBox>label:first-child{
     margin-top: 0;
 }
 .inputBox>input{
-    border: 2px solid rgb(216, 216, 216);
+    border: 2px solid rgb(235, 235, 235);
     padding: 10px 20px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     border-radius: 5px;
     -webkit-appearance: none;
     -moz-appearance: none;
-    font-weight: 400;
+    color: rgb(61, 61, 61);
 }
 .inputBox>input:focus{
     outline: none;
     position: relative;
-    border: 2px solid rgb(60, 61, 63);
+    border: 2px solid var(--kuning);
 }
 .adjust{
     display: inline-block;
@@ -146,7 +148,7 @@ h1,h2,h3,h4,h5,h6{
     display: inline-block;
     transform: translate(-7px, 2px);
 }
-.wrapper>button{
+.wrapper>.loginBtn{
     padding: 15px 20px;
     background: var(--hitam);
     color: var(--kuning);
@@ -157,9 +159,9 @@ h1,h2,h3,h4,h5,h6{
     font-weight: 600;
     cursor: pointer;
 }
-.wrapper>button:hover, button:focus{
+.wrapper>button:hover, .wrapper>button:focus{
     outline: none;
-    box-shadow: 0 0 10px 0 rgb(61, 61, 61);
+    box-shadow: 0 0 10px 0 rgb(61, 61, 61) !important;
 }
 .wrapper>p{
     text-align: center;
@@ -570,10 +572,8 @@ main{
     height: 40px;
 }
 .item>p{
-    border: 1px solid green;
-    color: green;
+    
     font-weight: 400;
-    background: rgba(0, 128, 0, 0.082);
     padding: 10px 25px 10px 33px;
     border-radius: 25px;
     font-size: 0.8rem;
@@ -619,6 +619,7 @@ main{
 .boxin>div>div{
     margin-left: 10px;
 }
+
 .boxin>div>h1{
     border-bottom: 1px solid rgb(199, 199, 199);
     color: var(--hitam);
@@ -706,10 +707,127 @@ main{
     font-size: 0.85rem;
 }
 .Created{
-    font-size: 0.7rem;
-    padding: 5px 10px;
     border: 1px solid green;
     background: rgba(0, 128, 0, 0.050);
-    border-radius: 4px;
     color: green;
+}
+.Closed{
+    color: rgb(19, 124, 223);
+    background: rgba(19, 124, 223, 0.05);
+    border: 1px solid rgb(19, 124, 223)
+}
+.row{
+    padding: 5px 10px;    
+    font-size: 0.7rem;
+    border-radius: 4px;
+}
+.uniq{
+    margin: 9px 0 0 0;
+    padding: 3px 20px 3px 27px;
+    background: rgba(0, 128, 0, 0.050);
+    color: green;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    text-align: center;
+}
+.Wait{
+    background: rgba(228, 149, 4, 0.05);
+    color: rgb(228, 149, 4);
+    border: 1px solid rgb(228,149,4);
+}
+.boxcom .admcomp{
+    border: 2px solid rgb(19, 124, 223);
+    color: rgb(19, 124, 223);
+    background: rgba(19, 124, 223, 0.1);
+    font-size: 0.9rem;
+}
+.admupdate{
+    border: 2px solid var(--kuning);
+    font-weight: 400;
+    display: block;
+    padding: 8px 16px 8px 21px;
+    background: var(--kuning);
+    color:white;
+    border: 2px solid rgb(216, 133, 10);
+    border-radius: 5px;
+}
+.admupdate:hover, .admupdate:focus{
+    box-shadow: 0 0  12px 0 var(--kuning);
+    background: var(--kuning);
+    color:white;
+}
+.close{
+    border: 2px solid rgb(252, 48, 48);
+    background: rgb(252, 48, 48);
+    border: 2px solid rgb(226, 7, 7);
+}
+.close:hover, .close:focus{
+    box-shadow: 0 0  12px 0 rgb(252,48,48);
+    background: rgb(252, 48, 48);
+    color:white;
+}
+.boxres{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.658);
+    z-index: 50;
+    top: 0;
+    display: none;
+}
+.formres{
+    background: white;
+    width: 50%;
+    margin: 50px 0 0 25%;
+    border-radius: 10px;
+}
+.formres>h1{
+    margin-bottom: 20px;
+    padding: 20px 30px 10px 30px;
+    border-bottom: 4px solid var(--kuning);
+}
+.formres>form{
+    padding: 0px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.subres{
+    padding: 12px 24px;
+    font-weight: 400;
+    margin: 10px 0 0 0;
+    border: 2px solid rgb(224, 154, 22);
+    background: var(--kuning);
+    color: white;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.subres:hover, .subres:focus{
+    box-shadow: 0 0 12px 0 var(--kuning); 
+}
+.subres:focus{
+    box-shadow: 0 0 12px 0 var(--kuning);
+    outline: none;
+}
+.formres>form>a{
+    margin-bottom: 50px;
+    text-align: center;
+}
+.infores{
+    text-align: center;
+    width: 50%;
+    padding: 12px 24px;
+    margin: 20px 0 0 25%;
+    border-radius: 5px;
+    background: rgba(0, 128, 0, 0.100);
+    font-weight: 400;
+    color: green;
+    display: block;
+}
+.resred{
+    border-radius: 5px;
+    background: rgba(255, 0, 0, 0.100);
+    font-weight: 400;
+    color: red;
 }
