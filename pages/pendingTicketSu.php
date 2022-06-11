@@ -10,23 +10,26 @@
                     echo "
                         <p class='infores resred'>Submit respon atas request gagal. </p>
                     ";
-                } else if($_GET['closed-request'] === 'success'){
+                }
+            }
+            if(isset($_GET['closed-request'])){
+                if($_GET['closed-request'] === 'success'){
                     echo "
                         <p class='infores'>Status request berhasil diupdate menjadi Closed, Terima Kasih</p>
                     ";
-                } else if($_GET['closed-request'] === 'failed'){
+                } else {
                     echo "
                         <p class='infores'>Gagal menyelesaikan Request.</p>
                     ";
                 }
-                echo "
+            }
+            echo "
                     <script>
                         setTimeout( () => {
                             document.querySelector('.infores').style.display = 'none';
                         },2500)
                     </script>
                 ";
-            }
         ?>
         
         <h1>Ticket Dalam Proses</h1>
@@ -63,17 +66,17 @@
                                 <h3 style="font-style: italic">" <?php echo $row['job_type']?> "</h3>
                             </div>
                         </div>
-                        <div style="flex-direction: column; gap: 15px; align-items: center;">
+                        <div class="boxbtn">
                             <?php 
                                 $idticket = $row['ticket_id'];
                                 if($row['status'] === 'Created'){
                                     echo "
                                         <a class='admupdate' href='?page=ticket-pending&update=yes&id=$idticket' ><i class='fi fi-rs-comment adjusts'></i> Berikan Tanggapan</a>
-                                        <a class='admupdate close' onClick=\"return confirm('Apakah request telah selesai?')\" href='../controller/processClose.php?id=$idticket'><i class='fi fi-rs-shield-check adjust'></i> Request Selesai</a>
+                                        <a class='admupdate close' onClick=\"return confirm('Apakah request telah selesai?')\" href='../controller/processClose.php?id=$idticket'><i class='fi fi-rs-shield-check adjust'></i> Selesaikan Request</a>
                                     ";
                                 } else if($row['status'] === 'Wait Technician'){
                                     echo "
-                                        <a class='admupdate close' onClick=\"return confirm('Apakah request telah selesai?')\" href='../controller/processClose.php?id=$idticket'><i class='fi fi-rs-shield-check adjust'></i> Request Selesai</a>
+                                        <a class='admupdate close' onClick=\"return confirm('Apakah request telah selesai?')\" href='../controller/processClose.php?id=$idticket'><i class='fi fi-rs-shield-check adjust'></i> Selesaikan Request</a>
                                     ";
                                 }
                                 ?>
@@ -87,7 +90,7 @@
     </div>
     <div class="boxres" id="boxreq">
         <div class="formres">
-            <h1>Form Response Request</h1>
+            <h1>Form Response</h1>
             <form action="../controller/submitResponse.php" method="post">
                 <div class="inputBox">
                     <label for="idrequest">Request ID</label>

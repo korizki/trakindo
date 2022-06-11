@@ -171,6 +171,7 @@ footer{
     color: white;
     text-align: center;
     position: relative;
+    margin-top: 20px;
     bottom: 0px;
     width: 100%;
     font-weight: 400;
@@ -564,8 +565,14 @@ main{
 }
 .item>div{
     display: flex;
-    gap: 25px;
+    gap: 35px;
     align-items: center;
+}
+#commonuser{
+    display: none;
+}
+#superuser{
+    display: none;
 }
 .item>div>img{
     width: auto;
@@ -593,7 +600,6 @@ main{
 }
 .item>div{
     display: flex;
-    gap: 100px;
     align-items: center;
     justify-content: space-between;
 }
@@ -677,12 +683,13 @@ main{
     box-shadow: none ;
     flex-direction: column;
 }
-.allresult>table{
+.allresult>div>table{
     border-collapse: collapse;
     border: 1px solid rgb(226, 226, 226);
     margin-bottom: 50px;
+    width: 100%;
 }
-.allresult>table>thead>tr{
+.allresult>div>table>thead>tr{
     background: var(--hitam);
     color: white;
     text-align: center;
@@ -690,18 +697,18 @@ main{
     border: 2px solid rgb(226,226,226);
     border-bottom: 0;
 }
-.allresult>table>tbody>tr{
+.allresult>div>table>tbody>tr{
     text-align: center;
     border: 1px solid rgb(231, 231, 231);
 }
-.allresult>table>tbody>tr:nth-child(even){
+.allresult>div>table>tbody>tr:nth-child(even){
     background: rgb(243, 243, 243)
 }
-.allresult>table>tbody>tr:hover{
+.allresult>div>table>tbody>tr:hover{
     background: rgb(235, 235, 235);
     cursor: pointer;
 }
-.allresult>table>thead>tr>td, .allresult>table>tbody>tr>td{
+.allresult>div>table>thead>tr>td, .allresult>div>table>tbody>tr>td{
     padding: 15px 10px;
     font-weight: 400;
     font-size: 0.85rem;
@@ -817,7 +824,7 @@ main{
 .infores{
     text-align: center;
     width: 50%;
-    padding: 12px 24px;
+    padding: 16px 32px;
     margin: 20px 0 0 25%;
     border-radius: 5px;
     background: rgba(0, 128, 0, 0.100);
@@ -830,4 +837,13 @@ main{
     background: rgba(255, 0, 0, 0.100);
     font-weight: 400;
     color: red;
+}
+.boxbtn{
+    flex-direction: column;
+    gap: 15px !important;
+    align-items: center ;
+}
+.boxbtn>a{
+    width: 100%;
+    text-align: center;
 }

@@ -210,6 +210,9 @@
     .item>div{
         width: 100%;
     }
+    .boxcom{
+        text-align: center !important;
+    }
     .boxcom>h3{
         text-align: center;
     }
@@ -249,9 +252,12 @@
         margin-left: 3%;
         width: 94%;
     }
-    .allresult>table>thead>tr>td,
-    .allresult>table>tbody>tr>td{
+    .allresult>div>table>thead>tr>td,
+    .allresult>div>table>tbody>tr>td{
         padding: 8px;
+    }
+    .allresult>div>table>tbody>tr>td>span{
+        display: block;
     }
     .mobile{
         display: none;
@@ -260,5 +266,18 @@
         position: relative;
         transform: translateX(-30px);
     }
-    
+    .admupdate{
+        width: 100%;
+        text-align: center;
+    }
+    .formres{
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 20px;
+    }
+    .infores{
+        width: 90%;
+        margin-left: 5%;
+        line-height: 1.5;
+    }
 }
