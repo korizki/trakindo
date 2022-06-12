@@ -647,6 +647,9 @@ main{
 .boxFilter{
     padding: 0;
 }
+#nomorsos{
+    display: none;
+}
 .boxFilter>form, .boxFilter>.allresult{
     width: 80%;
     margin-left: 10%;
@@ -659,7 +662,7 @@ main{
     box-shadow: 0 0 5px 0 rgb(207, 207, 207);
     font-size: 0.9rem;
 }
-.boxFilter>form>div>input{
+.boxFilter>form>div>input, .filters{
     padding: 7px 12px;
     border: 1px solid rgb(196, 196, 196);
     border-radius: 5px;

@@ -48,7 +48,7 @@
                     <input id="tglakhir" name="tglakhir" type="date" value="<?php echo $tglakhir?>" required>
                 </div>
                 <div>
-                    <select name="filtertype" id="filtertype">
+                    <select name="filtertype" id="filtertype" class="filters">
                         <option value="req_date" selected>Urut Berdasarkan Tanggal</option>
                         <option value="sn_unit">Urut Berdasarkan Serial Number</option>
                         <option value="status">Urut Berdasarkan Status</option>

@@ -20,36 +20,42 @@
             </div>
             <div class="inputBox">
                 <label for="statusreq">Status Request</label>
-                <select name="statusreq" id="statusreq" required>
+                <select name="statusreq" id="statusreq" onChange="checkval()" required>
                     <option value="Advice Only">Advice Only</option>
                     <option value="Waiting Quote">Waiting Quote</option>
                     <option value="Waiting Quote Approval/PO">Waiting Quote Approval/PO</option>
                     <option value="Waiting Schedule Perform">Waiting Schedule Perform</option>
                     <option value="Waiting Technician">Waiting Technician</option>
+                    <option value="In Progress Perform">In Progress Perform</option>
                     <option value="Closed">Closed</option>
                 </select>
+            </div>
+            <div id="nomorsos">
+                <div class='inputBox'>
+                    <label for='nomorso'>Nomor SO</label>
+                    <input type='text' id='nomorso' name='nomorso' required>
+                </div>
+                <div class='inputBox'>
+                    <label for='namateknisi'>Nama Teknisi</label>
+                    <input type='text' id='namateknisi' name='namateknisi' required>
+                </div> 
             </div>
             <div class="inputBox">
                 <label for="info">Catatan Tambahan</label>
                 <input type="text" id="info" name="info" >
             </div>
-            <?php 
-                if($row['status'] === "Waiting Quote"){
-                    echo "
-                        <div class='inputBox'>
-                            <label for='nomorso'>Nomor SO</label>
-                            <input type='text' id='nomorso' name='nomorso' required>
-                        </div>
-                        <div class='inputBox'>
-                            <label for='namateknisi'>Nama Teknisi</label>
-                            <input type='text' id='namateknisi' name='namateknisi' required>
-                        </div> 
-                    ";
-                }
-            ?>
             <button type="submit" class="subres" name="subres"><i class="fi fi-rs-check adjust"></i> Update Request Status</button>
             <a href="?page=ticket-pending" onClick="hidereq()">Batal</a>
         </form>
+        <script>
+            function checkval(e){
+                if(document.getElementById('statusreq').value === "Waiting Quote Approval/PO"){
+                    document.getElementById('nomorsos').style.display = "block";
+                } else {
+                    document.getElementById('nomorsos').style.display = "none";
+                }
+            }
+        </script>
     </div>
 </div>
 <?php 
