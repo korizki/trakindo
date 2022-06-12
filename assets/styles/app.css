@@ -647,7 +647,7 @@ main{
 .boxFilter{
     padding: 0;
 }
-#nomorsos{
+#inputso, #inputtech{
     display: none;
 }
 .boxFilter>form, .boxFilter>.allresult{

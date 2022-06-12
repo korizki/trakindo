@@ -18,11 +18,15 @@
                 // update tabel history
                 $updatehis = mysqli_query($connect, "UPDATE history SET quote_date = '$date', quote_note = '$note' WHERE request_id = $id ");
             } else if($statusreq === "Waiting Schedule Perform"){
-                $updatehis = mysqli_query($connect, "UPDATE history SET schedule_date = '$date', schedule_note = '$note' WHERE request_id = $id ");
+                $nomorso = $_POST['nomorso'];
+                $updatehis = mysqli_query($connect, "UPDATE history SET schedule_date = '$date', schedule_note = '$note', schedule_so = '$nomorso' WHERE request_id = $id ");
             } else if($statusreq === "Waiting Technician"){
-                $updatehis = mysqli_query($connect, "UPDATE history SET waittech_date = '$date', waittech_note = '$note' WHERE request_id = $id ");
+                $nomorso = $_POST['nomorso'];
+                $updatehis = mysqli_query($connect, "UPDATE history SET waittech_date = '$date', waittech_note = '$note', waittech_so = '$nomorso' WHERE request_id = $id ");
             } else if($statusreq === "In Progress Perform"){
-                $updatehis = mysqli_query($connect, "UPDATE history SET progress_date = '$date', progress_note = '$note' WHERE request_id = $id ");
+                $nomorso = $_POST['nomorso'];
+                $namateknisi = $_POST['namateknisi'];
+                $updatehis = mysqli_query($connect, "UPDATE history SET progress_date = '$date', progress_note = '$note', progress_so = '$nomorso', progress_tech = '$namateknisi' WHERE request_id = $id ");
             } else if($statusreq === "Closed"){
                 $updatehis = mysqli_query($connect, "UPDATE history SET close_date = '$date', close_note = '$note' WHERE request_id = $id");
             };

@@ -30,16 +30,14 @@
                     <option value="Closed">Closed</option>
                 </select>
             </div>
-            <div id="nomorsos">
-                <div class='inputBox'>
-                    <label for='nomorso'>Nomor SO</label>
-                    <input type='text' id='nomorso' name='nomorso' required>
-                </div>
-                <div class='inputBox'>
-                    <label for='namateknisi'>Nama Teknisi</label>
-                    <input type='text' id='namateknisi' name='namateknisi' required>
-                </div> 
+            <div class='inputBox' id="inputso">
+                <label for='nomorso'>Nomor Quote / SO</label>
+                <input type='text' id='nomorso' name='nomorso' >
             </div>
+            <div class='inputBox' id="inputtech">
+                <label for='namateknisi'>Nama Teknisi</label>
+                <input type='text' id='namateknisi' name='namateknisi'>
+            </div> 
             <div class="inputBox">
                 <label for="info">Catatan Tambahan</label>
                 <input type="text" id="info" name="info" >
@@ -49,10 +47,15 @@
         </form>
         <script>
             function checkval(e){
-                if(document.getElementById('statusreq').value === "Waiting Quote Approval/PO"){
-                    document.getElementById('nomorsos').style.display = "block";
+                if(document.getElementById('statusreq').value === "Waiting Quote Approval/PO" || document.getElementById('statusreq').value === "In Progress Perform"){
+                    document.getElementById('inputso').style.display = "flex";
+                    document.getElementById('inputtech').style.display ="flex";
+                } else if(document.getElementById('statusreq').value === "Waiting Schedule Perform" || document.getElementById('statusreq').value === "Waiting Technician") {
+                    document.getElementById('inputso').style.display = "flex";
+                    document.getElementById('inputtech').style.display ="none";
                 } else {
-                    document.getElementById('nomorsos').style.display = "none";
+                    document.getElementById('inputso').style.display = "none";
+                    document.getElementById('inputtech').style.display ="none";
                 }
             }
         </script>
