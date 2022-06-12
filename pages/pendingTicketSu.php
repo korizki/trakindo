@@ -1,3 +1,68 @@
+<div class="boxres" id="boxreq">
+    <?php 
+        include "../controller/connection.php";
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+            $getdata = mysqli_query($connect, "SELECT * FROM tickets WHERE ticket_id = $id");
+            $row = mysqli_fetch_assoc($getdata);
+        }
+    ?>
+    <div class="formres">
+        <h1>Form Update Request</h1>
+        <form action="../controller/submitResponse.php" method="post">
+            <div class="inputBox">
+                <label for="idrequest">Request ID</label>
+                <input class="dis" id="idrequest" name="idrequest" type="text" value="<?php echo $_GET['id']?>" required readonly>
+            </div>
+            <div class="inputBox">
+                <label for="dateresponse">Tanggal Respon</label>
+                <input class="dis" type="text" id="dateresponse" name="dateresponse" required readonly>
+            </div>
+            <div class="inputBox">
+                <label for="statusreq">Status Request</label>
+                <select name="statusreq" id="statusreq" required>
+                    <option value="Advice Only">Advice Only</option>
+                    <option value="Waiting Quote">Waiting Quote</option>
+                    <option value="Waiting Quote Approval/PO">Waiting Quote Approval/PO</option>
+                    <option value="Waiting Schedule Perform">Waiting Schedule Perform</option>
+                    <option value="Waiting Technician">Waiting Technician</option>
+                    <option value="Closed">Closed</option>
+                </select>
+            </div>
+            <div class="inputBox">
+                <label for="info">Catatan Tambahan</label>
+                <input type="text" id="info" name="info" >
+            </div>
+            <?php 
+                if($row['status'] === "Waiting Quote"){
+                    echo "
+                        <div class='inputBox'>
+                            <label for='nomorso'>Nomor SO</label>
+                            <input type='text' id='nomorso' name='nomorso' required>
+                        </div>
+                        <div class='inputBox'>
+                            <label for='namateknisi'>Nama Teknisi</label>
+                            <input type='text' id='namateknisi' name='namateknisi' required>
+                        </div> 
+                    ";
+                }
+            ?>
+            <button type="submit" class="subres" name="subres"><i class="fi fi-rs-check adjust"></i> Update Request Status</button>
+            <a href="?page=ticket-pending" onClick="hidereq()">Batal</a>
+        </form>
+    </div>
+</div>
+<?php 
+    if(isset($_GET['update'])){
+        if($_GET['update'] === 'yes'){
+        echo "
+            <script>
+                document.getElementById('boxreq').style.display = 'block';
+            </script>
+        ";    
+    }
+}
+?>
 <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100vh">
     <div class="pendingBox">
         <?php 
@@ -76,82 +141,10 @@
             <a href="summary.php">Kembali ke Halaman Utama</a>
         </div>
     </div>
-    <div class="boxres" id="boxreq">
-        <?php 
-            include "../controller/connection.php";
-            $id = $_GET['id'];
-            $getdata = mysqli_query($connect, "SELECT * FROM tickets WHERE ticket_id = $id");
-            $row = mysqli_fetch_assoc($getdata);
-           
-        ?>
-        <div class="formres">
-            <h1>Form Update Request</h1>
-            <form action="../controller/submitResponse.php" method="post">
-                <div class="inputBox">
-                    <label for="idrequest">Request ID</label>
-                    <input class="dis" id="idrequest" name="idrequest" type="text" value="<?php echo $_GET['id']?>" required readonly>
-                </div>
-                <div class="inputBox">
-                    <label for="dateresponse">Tanggal Respon</label>
-                    <input class="dis" type="text" id="dateresponse" name="dateresponse" required readonly>
-                </div>
-                <?php
-                    $inputvalue = '';
-                    if($row['status'] === "Created"){
-                        $inputvalue = "Advice Only";   
-                    } else if($row['status'] === 'Advice Only'){
-                        $inputvalue = "Waiting Quote";
-                    } else if($row['status'] === 'Waiting Quote' ){
-                        $inputvalue = "Waiting Quote Approval/PO";
-                    } else if($row['status'] === 'Waiting Quote Approval/PO'){
-                        $inputvalue = "Waiting Schedule Perform";
-                    } else if($row['status'] === 'Waiting Schedule Perform'){
-                        $inputvalue = "Waiting Technician";
-                    } else if($row['status'] === 'Waiting Technician'){
-                        $inputvalue = "In Progress Perform";
-                    } else if($row['status'] === 'In Progress Perform'){
-                        $inputvalue = "Closed";
-                    };
-                ?>
-                <div class="inputBox">
-                    <label for="statusreq">Status Request</label>
-                    <input class="dis" type="text" id="statusreq" name="statusreq" value="<?php echo $inputvalue; ?>" required readonly>
-                </div>
-                <div class="inputBox">
-                    <label for="info">Catatan Tambahan</label>
-                    <input type="text" id="info" name="info" >
-                </div>
-                <?php 
-                    if($row['status'] === "Waiting Quote"){
-                        echo "
-                            <div class='inputBox'>
-                                <label for='nomorso'>Nomor SO</label>
-                                <input type='text' id='nomorso' name='nomorso' required>
-                            </div>
-                            <div class='inputBox'>
-                                <label for='namateknisi'>Nama Teknisi</label>
-                                <input type='text' id='namateknisi' name='namateknisi' required>
-                            </div> 
-                        ";
-                    }
-                ?>
-                <button type="submit" class="subres" name="subres"><i class="fi fi-rs-check adjust"></i> Update Request Status</button>
-                <a href="?page=ticket-pending" onClick="hidereq()">Batal</a>
-            </form>
-        </div>
-    </div>
 <div>
-<?php 
-    if(isset($_GET['update'])){
-        if($_GET['update'] === 'yes'){
-        echo "
-            <script>
-                document.getElementById('boxreq').style.display = 'block';
-            </script>
-        ";    
-    }
-}
-?>
+
+
+
 <script>
     function hidereq(){
         document.getElementById('boxreq').style.display = 'none';

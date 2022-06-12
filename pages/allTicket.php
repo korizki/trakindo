@@ -102,7 +102,6 @@
                                 <td >Nama Perusahaan</td>
                                 <td class="mobile">No. Handphone</td>
                                 <td>Nomor SO</td>
-                                <td class="mobile">Tanggal Response</td>
                                 <td class="mobile">Nama Teknisi</td>
                                 <td>Status Ticket</td>
                             </tr>
@@ -119,7 +118,6 @@
                                         <td><?php echo $row['company'] ?></td>
                                         <td class="mobile"><?php echo $row['cp_phone'] ?></td>
                                         <td><?php echo $row['so_number'] ?></td>
-                                        <td class="mobile"><?php echo $row['response_date'] ?></td>
                                         <td class="mobile"><?php echo $row['tech_name'] ?></td>
                                         <td><span class="<?php echo $row['status'] ?> row"><?php echo $row['status'] ?></span></td>
                                     </tr>
