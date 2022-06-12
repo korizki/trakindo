@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./assets/styles/app.css">
     <link rel="stylesheet" href="./assets/styles/responsive.css">
     <link rel="icon" href="./assets/icons/laptop.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <main class="container">
@@ -24,7 +25,7 @@
             <img id="illus2" src="./assets/icons/trakindo.png" alt="icontrackindo">
             <h1 id="illus3">Technician Request Muara Enim</h1>
             <figure>
-                <img id="illus1" src="./assets/images/loginillus.svg" alt="illustration">
+                <img width="900" height="450" id="illus1" src="./assets/images/loginillus.svg" width="auto" height="auto" alt="illustration">
             </figure>
         </div>
 
@@ -86,12 +87,12 @@
                 </div>
                 <div class="wrapper">
                     <div class="inputBox">
-                        <label for="username">Masukkan Username</label>
-                        <input type="text" spellcheck="false"  name="username" id="username">
+                        <label for="usernameregister">Masukkan Username</label>
+                        <input type="text" spellcheck="false"  name="username" id="usernameregister">
                     </div>
                     <div class="inputBox">
-                        <label for="password">Masukkan Password  <i onclick="showPassword('passwordS')" title="Klik untuk melihat password" class="fi fi-rs-eye adjust eye" style="transform: translate(5px, 3px)"></i></label>
-                        <input type="password" spellcheck="false"  name="password" id="passwordS">
+                        <label for="passwordagain">Masukkan Password  <i onclick="showPassword('passwordagain')" title="Klik untuk melihat password" class="fi fi-rs-eye adjust eye" style="transform: translate(5px, 3px)"></i></label>
+                        <input type="password" spellcheck="false"  name="password" id="passwordagain">
                     </div>
                     <div class="inputBox">
                         <label for="company">Masukkan Nama Perusahaan</label>

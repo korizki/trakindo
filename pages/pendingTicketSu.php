@@ -67,19 +67,7 @@
                             </div>
                         </div>
                         <div class="boxbtn">
-                            <?php 
-                                $idticket = $row['ticket_id'];
-                                if($row['status'] === 'Created'){
-                                    echo "
-                                        <a class='admupdate' href='?page=ticket-pending&update=yes&id=$idticket' ><i class='fi fi-rs-comment adjusts'></i> Berikan Tanggapan</a>
-                                        <a class='admupdate close' onClick=\"return confirm('Apakah request telah selesai?')\" href='../controller/processClose.php?id=$idticket'><i class='fi fi-rs-shield-check adjust'></i> Selesaikan Request</a>
-                                    ";
-                                } else if($row['status'] === 'Wait Technician'){
-                                    echo "
-                                        <a class='admupdate close' onClick=\"return confirm('Apakah request telah selesai?')\" href='../controller/processClose.php?id=$idticket'><i class='fi fi-rs-shield-check adjust'></i> Selesaikan Request</a>
-                                    ";
-                                }
-                                ?>
+                            <a class='admupdate' href='?page=ticket-pending&update=yes&id=<?php echo $row['ticket_id']; ?>' ><i class='fi fi-rs-comment adjusts'></i> Update Request</a>
                         </div>
                     </div>
                     <?php
@@ -89,26 +77,65 @@
         </div>
     </div>
     <div class="boxres" id="boxreq">
+        <?php 
+            include "../controller/connection.php";
+            $id = $_GET['id'];
+            $getdata = mysqli_query($connect, "SELECT * FROM tickets WHERE ticket_id = $id");
+            $row = mysqli_fetch_assoc($getdata);
+           
+        ?>
         <div class="formres">
-            <h1>Form Response</h1>
+            <h1>Form Update Request</h1>
             <form action="../controller/submitResponse.php" method="post">
                 <div class="inputBox">
                     <label for="idrequest">Request ID</label>
-                    <input id="idrequest" name="idrequest" type="text" value="<?php echo $_GET['id']?>" required readonly>
+                    <input class="dis" id="idrequest" name="idrequest" type="text" value="<?php echo $_GET['id']?>" required readonly>
                 </div>
                 <div class="inputBox">
                     <label for="dateresponse">Tanggal Respon</label>
-                    <input type="text" id="dateresponse" name="dateresponse" required readonly>
+                    <input class="dis" type="text" id="dateresponse" name="dateresponse" required readonly>
+                </div>
+                <?php
+                    $inputvalue = '';
+                    if($row['status'] === "Created"){
+                        $inputvalue = "Advice Only";   
+                    } else if($row['status'] === 'Advice Only'){
+                        $inputvalue = "Waiting Quote";
+                    } else if($row['status'] === 'Waiting Quote' ){
+                        $inputvalue = "Waiting Quote Approval/PO";
+                    } else if($row['status'] === 'Waiting Quote Approval/PO'){
+                        $inputvalue = "Waiting Schedule Perform";
+                    } else if($row['status'] === 'Waiting Schedule Perform'){
+                        $inputvalue = "Waiting Technician";
+                    } else if($row['status'] === 'Waiting Technician'){
+                        $inputvalue = "In Progress Perform";
+                    } else if($row['status'] === 'In Progress Perform'){
+                        $inputvalue = "Closed";
+                    };
+                ?>
+                <div class="inputBox">
+                    <label for="statusreq">Status Request</label>
+                    <input class="dis" type="text" id="statusreq" name="statusreq" value="<?php echo $inputvalue; ?>" required readonly>
                 </div>
                 <div class="inputBox">
-                    <label for="nomorso">Nomor SO</label>
-                    <input type="text" id="nomorso" name="nomorso" required>
+                    <label for="info">Catatan Tambahan</label>
+                    <input type="text" id="info" name="info" >
                 </div>
-                <div class="inputBox">
-                    <label for="namateknisi">Nama Teknisi</label>
-                    <input type="text" id="namateknisi" name="namateknisi" required>
-                </div>
-                <button type="submit" class="subres" name="subres"><i class="fi fi-rs-check adjust"></i> Submit Respon</button>
+                <?php 
+                    if($row['status'] === "Waiting Quote"){
+                        echo "
+                            <div class='inputBox'>
+                                <label for='nomorso'>Nomor SO</label>
+                                <input type='text' id='nomorso' name='nomorso' required>
+                            </div>
+                            <div class='inputBox'>
+                                <label for='namateknisi'>Nama Teknisi</label>
+                                <input type='text' id='namateknisi' name='namateknisi' required>
+                            </div> 
+                        ";
+                    }
+                ?>
+                <button type="submit" class="subres" name="subres"><i class="fi fi-rs-check adjust"></i> Update Request Status</button>
                 <a href="?page=ticket-pending" onClick="hidereq()">Batal</a>
             </form>
         </div>
