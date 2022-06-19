@@ -4,7 +4,7 @@
         <div class="ticketResult">
             <?php 
                 include "../controller/connection.php";
-                $query = mysqli_query($connect, "SELECT * FROM tickets WHERE requestor = '$username' AND status != 'Closed' ORDER BY status ASC");
+                $query = mysqli_query($connect, "SELECT * FROM tickets WHERE requestor = '$username' AND status != 'Closed' AND status != 'Advice Only' ORDER BY status ASC");
                 if(mysqli_num_rows($query) === 0){
                     echo "
                         <div class='emptyresult'>

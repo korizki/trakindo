@@ -110,7 +110,7 @@
         <div class="ticketResult">
             <?php 
                 include "../controller/connection.php";
-                $query = mysqli_query($connect, "SELECT * FROM tickets INNER JOIN user ON tickets.requestor = user.user_name WHERE status != 'Closed' ORDER BY status ASC");
+                $query = mysqli_query($connect, "SELECT * FROM tickets INNER JOIN user ON tickets.requestor = user.user_name WHERE status IN('Created','Waiting Quote','Waiting Quote Approval/PO','Waiting Schedule Perform','Waiting Technician','In Progress Perform') ORDER BY status ASC");
                 if(mysqli_num_rows($query) === 0){
                     echo "
                         <div class='emptyresult'>

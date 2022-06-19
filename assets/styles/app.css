@@ -717,12 +717,12 @@ main{
     font-weight: 400;
     font-size: 0.85rem;
 }
-.Created, .Advice{
+.Created{
     border: 1px solid green;
     background: rgba(0, 128, 0, 0.050);
     color: green;
 }
-.Closed{
+.Closed, .Advice{
     color: rgb(19, 124, 223);
     background: rgba(19, 124, 223, 0.05);
     border: 1px solid rgb(19, 124, 223)
